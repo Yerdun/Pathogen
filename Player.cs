@@ -7,9 +7,9 @@ public class Player : Area2D
 	// private int a = 2;
 	// private string b = "text";
 	[Export]
-	public int unfocusedSpeed = 200;
+	public int standardSpeed = 150;	// Standard speed
 	[Export]
-	public int focusSpeed = 100;
+	public int focusSpeed = 80;	// Speed while focused (slow mode)
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,10 +20,13 @@ public class Player : Area2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
-		var velocity = new Vector2();
-		bool isFocused = false;
-		int speed = unfocusedSpeed;
+		var velocity = new Vector2();	// Movement velocity represented as a 2 dimensional vector
+		bool isFocused = false;	// Tracks whether or not player is focused
+		int speed = standardSpeed;	// Speed variable, initialized to standardSpeed
+		var playerAnimation = GetNode<AnimatedSprite>("PlayerAnimation");	// Method used to play and stop player animation
+		var focusAnimation = GetNode<AnimatedSprite>("FocusAnimation");	// Method used to play and stop focusing animation
 		
+		// Controls: Arrow keys to move, Shift to focus (can change in Project Settings > Input Map)
 		if (Input.IsActionPressed("ui_right"))
 			velocity.x += 1;
 		if (Input.IsActionPressed("ui_left"))
@@ -34,13 +37,17 @@ public class Player : Area2D
 			velocity.y += 1;
 		if (Input.IsActionPressed("control_focus"))
 			isFocused = true;
-		if (Input.IsActionJustReleased("control_focus"))
-			isFocused = false;
 		
 		if (isFocused)
+		{
 			speed = focusSpeed;
+			focusAnimation.Play("focused");	// Placeholder animation just containing 1 frame showing hitbox
+		}
 		else if (isFocused == false)
-			speed = unfocusedSpeed;
+		{
+			speed = standardSpeed;
+			focusAnimation.Play("default");	// Placeholder blank animation
+		}
 		
 		if (velocity.Length() > 0)
 			velocity = velocity.Normalized() * speed;

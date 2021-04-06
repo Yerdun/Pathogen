@@ -33,8 +33,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-unfocusedSpeed = 300
-focusSpeed = 150
 
 [node name="PlayerAnimation" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
