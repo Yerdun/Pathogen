@@ -8,6 +8,7 @@ public class Player : Area2D
 	// private string b = "text";
 	[Export]
 	public float speed = 400f;
+	public float focusMultiplier = 0.5f;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,6 +20,10 @@ public class Player : Area2D
 	public override void _Process(float delta)
 	{
 		var velocity = new Vector2();
+		bool isFocused = false;
+		
+		if (Input.IsActionPressed("control_focus"))
+			isFocused = true;
 		
 		if (Input.IsActionPressed("ui_right"))
 			velocity.x += 1;
@@ -32,9 +37,12 @@ public class Player : Area2D
 		if (Input.IsActionPressed("ui_down"))
 			velocity.y += 1;
 		
-		if (velocity.Length() > 0)
+		if (velocity.Length() > 0 && isFocused)
+			velocity = velocity.Normalized() * speed * focusMultiplier;
+		
+		else if (velocity.Length() > 0 && !isFocused)
 			velocity = velocity.Normalized() * speed;
-			
+		
 		Position += velocity * delta;
 	}
 
