@@ -545,12 +545,12 @@
         </member>
         <member name="T:Godot.EditorInspectorPlugin">
             <summary>
-            <para>This plugins allows adding custom property editors to <see cref="T:Godot.EditorInspector"/>.</para>
+            <para>These plugins allow adding custom property editors to <see cref="T:Godot.EditorInspector"/>.</para>
             <para>Plugins are registered via <see cref="M:Godot.EditorPlugin.AddInspectorPlugin(Godot.EditorInspectorPlugin)"/>.</para>
             <para>When an object is edited, the <see cref="M:Godot.EditorInspectorPlugin.CanHandle(Godot.Object)"/> function is called and must return <c>true</c> if the object type is supported.</para>
             <para>If supported, the function <see cref="M:Godot.EditorInspectorPlugin.ParseBegin(Godot.Object)"/> will be called, allowing to place custom controls at the beginning of the class.</para>
             <para>Subsequently, the <see cref="M:Godot.EditorInspectorPlugin.ParseCategory(Godot.Object,System.String)"/> and <see cref="M:Godot.EditorInspectorPlugin.ParseProperty(Godot.Object,System.Int32,System.String,System.Int32,System.String,System.Int32)"/> are called for every category and property. They offer the ability to add custom controls to the inspector too.</para>
-            <para>Finally <see cref="M:Godot.EditorInspectorPlugin.ParseEnd"/> will be called.</para>
+            <para>Finally, <see cref="M:Godot.EditorInspectorPlugin.ParseEnd"/> will be called.</para>
             <para>On each of these calls, the "add" functions can be called.</para>
             </summary>
         </member>
@@ -1601,7 +1601,7 @@
         </member>
         <member name="M:Godot.EditorSpatialGizmoPlugin.IsSelectableWhenHidden">
             <summary>
-            <para>Override this method to define whether Spatial with this gizmo should be selecteble even when the gizmo is hidden.</para>
+            <para>Override this method to define whether a Spatial with this gizmo should be selectable even when the gizmo is hidden.</para>
             </summary>
         </member>
         <member name="M:Godot.EditorSpatialGizmoPlugin.Redraw(Godot.EditorSpatialGizmo)">
@@ -1662,7 +1662,7 @@
         </member>
         <member name="M:Godot.EditorVCSInterface.GetModifiedFilesData">
             <summary>
-            <para>Returns a <see cref="T:Godot.Collections.Dictionary"/> containing the path of the detected file change mapped to an integer signifying what kind of a change the corresponding file has experienced.</para>
+            <para>Returns a <see cref="T:Godot.Collections.Dictionary"/> containing the path of the detected file change mapped to an integer signifying what kind of change the corresponding file has experienced.</para>
             <para>The following integer values are being used to signify that the detected file is:</para>
             <para>- <c>0</c>: New to the VCS working directory</para>
             <para>- <c>1</c>: Modified</para>
