@@ -1,0 +1,8 @@
+/home/jordan/Repos/Pathogen/.mono/temp/bin/Debug/Pathogen.dll
+/home/jordan/Repos/Pathogen/.mono/temp/bin/Debug/Pathogen.pdb
+/home/jordan/Repos/Pathogen/.mono/temp/obj/Debug/Pathogen.csprojAssemblyReference.cache
+/home/jordan/Repos/Pathogen/.mono/temp/obj/Debug/Pathogen.AssemblyInfoInputs.cache
+/home/jordan/Repos/Pathogen/.mono/temp/obj/Debug/Pathogen.AssemblyInfo.cs
+/home/jordan/Repos/Pathogen/.mono/temp/obj/Debug/Pathogen.csproj.CoreCompileInputs.cache
+/home/jordan/Repos/Pathogen/.mono/temp/obj/Debug/Pathogen.dll
+/home/jordan/Repos/Pathogen/.mono/temp/obj/Debug/Pathogen.pdb

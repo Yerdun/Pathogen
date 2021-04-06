@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/jordan/Repos/Pathogen/Pathogen.csproj": {}
+  },
+  "projects": {
+    "/home/jordan/Repos/Pathogen/Pathogen.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jordan/Repos/Pathogen/Pathogen.csproj",
+        "projectName": "Pathogen",
+        "projectPath": "/home/jordan/Repos/Pathogen/Pathogen.csproj",
+        "packagesPath": "/home/jordan/.nuget/packages/",
+        "outputPath": "/home/jordan/Repos/Pathogen/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jordan/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "runtimeIdentifierGraphPath": "/usr/lib/mono/msbuild/Current/bin/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
