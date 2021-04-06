@@ -1,0 +1,2 @@
+﻿44417
+/home/jordan/.local/bin/godot_v3.3-rc7_mono_x11.64
