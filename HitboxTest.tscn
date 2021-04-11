@@ -9,7 +9,7 @@
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="EggBullet" parent="." instance=ExtResource( 2 )]
-position = Vector2( 91.7272, 120.5 )
+position = Vector2( 90, 120 )
 
 [node name="EggBulletSmall" parent="." instance=ExtResource( 1 )]
-position = Vector2( 227, 121.5 )
+position = Vector2( 240, 120 )

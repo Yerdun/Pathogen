@@ -56,13 +56,12 @@ public class Player : Area2D
 		Position = new Vector2(
 			x: Mathf.Clamp(Position.x, 0, 320),
 			y: Mathf.Clamp(Position.y, 0, 240)
-		); 
+		);	// Bind the player's position to within the game area (center focus, need to adjust based on sprite size)
 	}
 
 	private void _on_Player_body_entered(object body)
 	{
-		// Replace with function body.
-		GD.Print("Object in player body");
+		GD.Print("Object in player body");	// Stub console output for hit detection
 	}
 
 }
