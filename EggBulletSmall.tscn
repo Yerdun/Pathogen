@@ -6,7 +6,7 @@
 radius = 4.0
 height = 3.0
 
-[node name="Area2D" type="Area2D"]
+[node name="EggBulletSmall" type="Area2D"]
 __meta__ = {
 "_edit_group_": true
 }

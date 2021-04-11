@@ -53,6 +53,16 @@ public class Player : Area2D
 			velocity = velocity.Normalized() * speed;
 		
 		Position += velocity * delta;
+		Position = new Vector2(
+			x: Mathf.Clamp(Position.x, 0, 320),
+			y: Mathf.Clamp(Position.y, 0, 240)
+		); 
+	}
+
+	private void _on_Player_body_entered(object body)
+	{
+		// Replace with function body.
+		GD.Print("Object in player body");
 	}
 
 }
