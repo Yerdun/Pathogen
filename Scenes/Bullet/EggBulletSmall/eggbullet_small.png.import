@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eggbullet-small.png-a31c355a64b52b4c45923ba9f6e4b744.stex"
+path="res://.import/eggbullet_small.png-7522dcf07a99ff15311fe02c61801db8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://eggbullet-small.png"
-dest_files=[ "res://.import/eggbullet-small.png-a31c355a64b52b4c45923ba9f6e4b744.stex" ]
+source_file="res://Scenes/Bullet/EggBulletSmall/eggbullet_small.png"
+dest_files=[ "res://.import/eggbullet_small.png-7522dcf07a99ff15311fe02c61801db8.stex" ]
 
 [params]
 
