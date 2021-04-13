@@ -38248,7 +38248,7 @@
             <para>If you need these to be immediately updated, you can call <see cref="M:Godot.TileMap.UpdateDirtyQuadrants"/>.</para>
             <para>Overriding this method also overrides it internally, allowing custom logic to be implemented when tiles are placed/removed:</para>
             <para><code>
-            func set_cell(x, y, tile, flip_x=false, flip_y=false, transpose=false, autotile_coord=Vector2())
+            func set_cell(x, y, tile, flip_x=false, flip_y=false, transpose=false, autotile_coord=Vector2()):
                 # Write your custom logic here.
                 # To call the default method:
                 .set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord)

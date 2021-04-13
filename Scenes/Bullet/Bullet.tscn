@@ -4,8 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[node name="Bullet" type="RigidBody2D"]
-mode = 3
+[node name="Bullet" type="KinematicBody2D"]
 __meta__ = {
 "_edit_group_": true
 }

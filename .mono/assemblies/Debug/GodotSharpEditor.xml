@@ -630,6 +630,12 @@
             <para>Returns the main container of Godot editor's window. For example, you can use it to retrieve the size of the container and place your controls accordingly.</para>
             </summary>
         </member>
+        <member name="M:Godot.EditorInterface.GetEditorScale">
+            <summary>
+            <para>Returns the actual scale of the editor UI (<c>1.0</c> being 100% scale). This can be used to adjust position and dimensions of the UI added by plugins.</para>
+            <para>Note: This value is set via the <c>interface/editor/display_scale</c> and <c>interface/editor/custom_display_scale</c> editor settings. Editor must be restarted for changes to be properly applied.</para>
+            </summary>
+        </member>
         <member name="M:Godot.EditorInterface.EditResource(Godot.Resource)">
             <summary>
             <para>Edits the given <see cref="T:Godot.Resource"/>.</para>
