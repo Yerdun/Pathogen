@@ -7,9 +7,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160, 119 )
 
 [node name="EggBullet" parent="." instance=ExtResource( 2 )]
-position = Vector2( 90, 120 )
+position = Vector2( 90, 119 )
 
 [node name="EggBulletSmall" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 120 )
