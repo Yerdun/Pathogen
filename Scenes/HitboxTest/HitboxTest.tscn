@@ -7,10 +7,15 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 160, 119 )
+position = Vector2( 550, 340 )
+scale = Vector2( 4, 4 )
+standardSpeed = 600
+focusSpeed = 250
 
 [node name="EggBullet" parent="." instance=ExtResource( 2 )]
-position = Vector2( 90, 119 )
+position = Vector2( 240, 360 )
+scale = Vector2( 4, 4 )
 
 [node name="EggBulletSmall" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 120 )
+position = Vector2( 820, 350 )
+scale = Vector2( 4, 4 )
