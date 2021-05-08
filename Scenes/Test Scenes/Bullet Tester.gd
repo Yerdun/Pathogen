@@ -1,6 +1,7 @@
 extends Node
 
 export (PackedScene) var BasicBullet # reference to basic bullet
+export (PackedScene) var PiercingBullet # reference to piercing bullet
 
 var SelectedBullet # the currently active bullet
 
@@ -11,12 +12,15 @@ var rapidFireEnabled # true if rapid fire enabled
 var wideBeamEnabled # true if shot is wide
 var wideSpacing = 30 #avoiding magic numbers; space between wide beam bullets
 
+var piercingEnabled # true if piercing is enabled
+
 
 func _ready():
 	SelectedBullet = BasicBullet # defaults selected bullet as basic bullet
 	canFire = true # ready shot cooldown immediately
 	rapidFireEnabled = false
 	wideBeamEnabled = false
+	piercingEnabled = false
 
 func _process(delta):
 	pass
@@ -59,3 +63,11 @@ func _on_Fast_Button_pressed():
 
 func _on_Wide_Button_pressed():
 	wideBeamEnabled = !wideBeamEnabled
+
+
+func _on_Piercing_Button_pressed():
+	piercingEnabled = !piercingEnabled
+	if piercingEnabled:
+		SelectedBullet = PiercingBullet
+	else:
+		SelectedBullet = BasicBullet
