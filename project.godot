@@ -10,19 +10,17 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="Pathogen"
-run/main_scene="res://Scenes/Test_Scene.tscn"
+run/main_scene="res://Scenes/HitboxTest/HitboxTest.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1050
-window/size/height=700
+window/size/width=800
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
