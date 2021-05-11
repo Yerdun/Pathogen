@@ -5,8 +5,9 @@
 [ext_resource path="res://Assets/Scenes/Enemy/Bomb Enemy/Bomb Enemy.gd" type="Script" id=3]
 
 [node name="Bomb Enemy" instance=ExtResource( 1 )]
+linear_velocity = Vector2( -60, 0 )
 script = ExtResource( 3 )
-maxHP = 5
+maxHP = 4
 copyAbility = "widebeam"
 bullet = ExtResource( 2 )
 
