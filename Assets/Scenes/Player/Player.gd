@@ -55,8 +55,18 @@ func _on_Player_body_entered(body):
 		$PlayerAnimation.play("death")	# Play death animation (placeholder blank)
 		is_dead = true	# Set is_dead variable to true, to lock control
 		yield(get_tree().create_timer(0.5), "timeout")	# Wait half a second
+<<<<<<< Updated upstream
 		position.x = 160	# Reset player position (temporarily the Player node position defaults, change later)
 		position.y = 120
 		$PlayerAnimation.play("default")	# Return to default animation
 		is_dead = false	# Change is_dead to false to regain control
+=======
+		if lives >= 1:	# When player still has lives
+			position.x = 160	# Reset player position (temporarily the Player node position defaults, change later)
+			position.y = 120
+			$PlayerAnimation.play("default")	# Return to default animation
+			is_dead = false	# Change is_dead to false to regain control
+		else:	# Game over routine
+			get_tree().change_scene("res://Assets/Scenes/Test Scenes/Game Over.tscn")
+>>>>>>> Stashed changes
 	

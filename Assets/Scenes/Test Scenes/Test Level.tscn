@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Scenes/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/title screen/background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Scenes/Test Scenes/Test Level.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Scenes/Test Scenes/Enemy Spawn Tester.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scenes/Enemy/Bomb Enemy/Bomb Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scenes/Enemy/Piercer Enemy/Piercer Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Scenes/Test Scenes/copyTestButton.gd" type="Script" id=7]
+
+[node name="Test Level" type="Node"]
+script = ExtResource( 3 )
+bombEnemy = ExtResource( 5 )
+piercerEnemy = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 348.803, 309.587 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63.2135, 303.066 )
+
+[node name="Enemy Spawn Tester" parent="." instance=ExtResource( 4 )]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 609.595
+margin_top = 572.615
+margin_right = 789.595
+margin_bottom = 592.615
+text = "Go to copy test"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

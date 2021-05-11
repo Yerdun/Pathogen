@@ -46,4 +46,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+<<<<<<< Updated upstream
+=======
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 760.695, 166.336 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+>>>>>>> Stashed changes
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
