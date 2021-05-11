@@ -21,10 +21,10 @@ frames = SubResource( 1 )
 playing = true
 
 [node name="Button" type="Button" parent="."]
-margin_left = 235.832
-margin_top = 318.674
-margin_right = 493.832
-margin_bottom = 404.674
+margin_left = 259.643
+margin_top = 317.086
+margin_right = 517.643
+margin_bottom = 403.086
 text = "Play"
 script = ExtResource( 4 )
 __meta__ = {
