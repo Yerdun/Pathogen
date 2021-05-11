@@ -5,6 +5,7 @@ export var focus_speed = 140	# Speed while focused (slow mode)
 export var lives = 3			# Amount of player lives
 var is_dead = false				# Variable used to store death status (if dead, disallow doing anything)
 
+
 func _ready():
 	pass # Currently unneeded, included as a stub.
 
@@ -52,10 +53,10 @@ func _on_Player_body_entered(body):
 	else:	# If colliding with anything else (enemy, bullet)
 		lives -= 1	# Subtract one life
 		$PlayerAnimation.play("death")	# Play death animation (placeholder blank)
-		is_dead = true
+		is_dead = true	# Set is_dead variable to true, to lock control
 		yield(get_tree().create_timer(0.5), "timeout")	# Wait half a second
 		position.x = 160	# Reset player position (temporarily the Player node position defaults, change later)
 		position.y = 120
 		$PlayerAnimation.play("default")	# Return to default animation
-		is_dead = false
+		is_dead = false	# Change is_dead to false to regain control
 	
