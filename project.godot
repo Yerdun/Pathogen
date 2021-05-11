@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Pathogen"
+run/main_scene="res://Assets/Scenes/Test Scenes/Enemy Tester.tscn"
 config/icon="res://icon.png"
 
 [display]
