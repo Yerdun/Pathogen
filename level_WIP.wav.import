@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level_WIP.wav-f1e14e02d5b4e0a7ef26aa41d70f79c8.sample"
+
+[deps]
+
+source_file="res://Assets/level_WIP.wav"
+dest_files=[ "res://.import/level_WIP.wav-f1e14e02d5b4e0a7ef26aa41d70f79c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
