@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pathogen 1.png-b1454bbece47fdb55c2489b52b3486c7.stex"
+path="res://.import/shooter 2.png-f1698a1c83f2887e1b0c4667b1f04419.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Enzo/Sprites/pathogen 1.png"
-dest_files=[ "res://.import/pathogen 1.png-b1454bbece47fdb55c2489b52b3486c7.stex" ]
+source_file="res://Scenes/Old Scenes/Enzo/Sprites/shooter 2.png"
+dest_files=[ "res://.import/shooter 2.png-f1698a1c83f2887e1b0c4667b1f04419.stex" ]
 
 [params]
 

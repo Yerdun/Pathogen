@@ -17,9 +17,12 @@ PiercingBullet = ExtResource( 4 )
 position = Vector2( 191.57, 323.411 )
 
 [node name="Target Dummy" type="RigidBody2D" parent="."]
-position = Vector2( 838.391, 319.897 )
+position = Vector2( 645.569, 327.313 )
 mode = 1
 gravity_scale = 0.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Hitbox" type="CollisionShape2D" parent="Target Dummy"]
 shape = SubResource( 1 )

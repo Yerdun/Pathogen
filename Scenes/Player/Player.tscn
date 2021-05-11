@@ -27,6 +27,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 20, 20 )
 
 [node name="Player" type="Area2D"]
 position = Vector2( 160, 120 )
@@ -36,13 +37,12 @@ __meta__ = {
 }
 
 [node name="PlayerAnimation" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 
 [node name="FocusAnimation" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
 
 [node name="Bullet Control" parent="." instance=ExtResource( 4 )]
