@@ -18,7 +18,8 @@ func _on_Bullet_body_entered(body):
 		if body.currentHP <= 0: # if you killed the enemy,
 			_killed_enemy() # neat! tell everyone, including the player
 	
-	queue_free() # destroy bullet on collision
+	if body.is_in_group("enemies"):	# if hitting an enemy
+		queue_free() # destroy bullet on collision
 
 func _killed_enemy(): # when called, emits the killed_enemy signal
 	emit_signal("killed_enemy")

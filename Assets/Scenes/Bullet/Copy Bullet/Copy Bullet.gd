@@ -24,4 +24,6 @@ func _on_Copy_Bullet_body_entered(body):
 				emit_signal("copied_piercing")
 			_:
 				print("Default message!")
-	queue_free() # destroy bullet on enemy contact
+				
+	if body.is_in_group("enemies"):	# if hitting an enemy
+		queue_free() # destroy bullet on collision
