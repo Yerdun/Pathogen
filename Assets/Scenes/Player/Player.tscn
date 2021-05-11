@@ -52,5 +52,6 @@ frames = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Bullet Control" parent="." instance=ExtResource( 4 )]
+position = Vector2( 32, 0 )
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
