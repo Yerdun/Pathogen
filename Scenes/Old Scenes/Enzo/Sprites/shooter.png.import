@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eggbullet_small.png-7522dcf07a99ff15311fe02c61801db8.stex"
+path="res://.import/shooter.png-5e8f70722c70383487645664c1d4cb09.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Bullet/EggBulletSmall/eggbullet_small.png"
-dest_files=[ "res://.import/eggbullet_small.png-7522dcf07a99ff15311fe02c61801db8.stex" ]
+source_file="res://Scenes/Old Scenes/Enzo/Sprites/shooter.png"
+dest_files=[ "res://.import/shooter.png-5e8f70722c70383487645664c1d4cb09.stex" ]
 
 [params]
 
