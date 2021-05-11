@@ -18,6 +18,8 @@ var wideSpacing = 30 # avoiding magic numbers; space between wide beam bullets
 
 var piercingEnabled # true if piercing is enabled
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SelectedBullet = BasicBullet # defaults selected bullet as basic bullet
@@ -31,7 +33,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	_shoot() 
+	if owner.is_dead == false:	# If player is not dead
+		_shoot() 	# Allow player to shoot
 
 func _shoot(): # handles shooting controls and cooldown
 	# if player is trying to use copy ability, cd is ready, and charge is max 
