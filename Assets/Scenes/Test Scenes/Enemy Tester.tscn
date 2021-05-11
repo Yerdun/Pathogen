@@ -9,6 +9,7 @@ script = ExtResource( 2 )
 
 [node name="Bomb Enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 770.23, 282.877 )
+collision_layer = 1
 
 [node name="Button" type="Button" parent="."]
 margin_left = 637.797
@@ -22,5 +23,6 @@ __meta__ = {
 
 [node name="Piercer Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 760.695, 166.336 )
+collision_layer = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
