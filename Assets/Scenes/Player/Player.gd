@@ -50,13 +50,16 @@ func _on_Player_body_entered(body):
 		$"Bullet Control".CurrentCharge = $"Bullet Control".MaxCharge	# Max copy charge if colliding with copy charger
 		body.queue_free()	# Remove body
 	
-	else:	# If colliding with anything else (enemy, bullet)
+	elif is_dead == false:	# If colliding with anything else eg. enemy, bullet, die (don't allow dying while respawning)
 		lives -= 1	# Subtract one life
 		$PlayerAnimation.play("death")	# Play death animation (placeholder blank)
 		is_dead = true	# Set is_dead variable to true, to lock control
 		yield(get_tree().create_timer(0.5), "timeout")	# Wait half a second
-		position.x = 160	# Reset player position (temporarily the Player node position defaults, change later)
-		position.y = 120
-		$PlayerAnimation.play("default")	# Return to default animation
-		is_dead = false	# Change is_dead to false to regain control
+		if lives >= 1:	# When player still has lives
+			position.x = 160	# Reset player position (temporarily the Player node position defaults, change later)
+			position.y = 120
+			$PlayerAnimation.play("default")	# Return to default animation
+			is_dead = false	# Change is_dead to false to regain control
+		else:	# Game over routine
+			print("game over yeah")
 	
