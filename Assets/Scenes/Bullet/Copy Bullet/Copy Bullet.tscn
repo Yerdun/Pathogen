@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Scenes/Old Scenes/HitboxTest/EggBullet/eggbullet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Projectiles/player_copy_bullet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scenes/Bullet/Copy Bullet/Copy Bullet.gd" type="Script" id=2]
 
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 12.1479
-height = 8.12492
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.3952, 15.7948 )
 
 [node name="Copy Bullet" type="Area2D"]
 script = ExtResource( 2 )
