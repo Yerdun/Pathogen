@@ -57,6 +57,8 @@ func _shoot(): # handles shooting controls and cooldown
 	elif Input.is_action_pressed("shoot") and canFire:
 		# instance selected bullet and spawn it in
 		var NewBullet = SelectedBullet.instance()
+		# normal bullets emit a signal when they kill an enemy, next line links it to function
+		NewBullet.connect("killed_enemy", self, "chargeCopyBullet")
 		owner.owner.add_child(NewBullet) # the owner of this node is the player
 		# the owner of the player is the world, which is what we want the bullet
 		# to be the child of, so that player movement does not move the bullets too
