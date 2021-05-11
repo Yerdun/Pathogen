@@ -8,6 +8,7 @@ radius = 12.0055
 height = 8.4684
 
 [node name="Enemy Bullet" type="Area2D"]
+collision_layer = 2
 script = ExtResource( 2 )
 speed = 400
 
