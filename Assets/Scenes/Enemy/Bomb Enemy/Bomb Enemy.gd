@@ -24,3 +24,5 @@ func explode(var numberOfShots): # shoots a bunch of bullets in a circle
 		# rotate the bullet's hitbox
 		newBullet.get_node("Hitbox").rotation_degrees += rad2deg(rotationAngle)
 		owner.add_child(newBullet)
+		
+		queue_free()
