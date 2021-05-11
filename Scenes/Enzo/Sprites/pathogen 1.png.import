@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pathogen 1.png-a57d0ca3c4dba2208f5169f8e0a646da.stex"
+path="res://.import/pathogen 1.png-b1454bbece47fdb55c2489b52b3486c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Sprites/pathogen 1.png"
-dest_files=[ "res://.import/pathogen 1.png-a57d0ca3c4dba2208f5169f8e0a646da.stex" ]
+source_file="res://Scenes/Enzo/Sprites/pathogen 1.png"
+dest_files=[ "res://.import/pathogen 1.png-b1454bbece47fdb55c2489b52b3486c7.stex" ]
 
 [params]
 

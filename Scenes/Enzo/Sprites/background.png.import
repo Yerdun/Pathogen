@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shooter 2.png-6b006fba4839820cd6b00cdd3a40de27.stex"
+path="res://.import/background.png-c31cb68aa3da86e7083c4de1eddba1bb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Sprites/shooter 2.png"
-dest_files=[ "res://.import/shooter 2.png-6b006fba4839820cd6b00cdd3a40de27.stex" ]
+source_file="res://Scenes/Enzo/Sprites/background.png"
+dest_files=[ "res://.import/background.png-c31cb68aa3da86e7083c4de1eddba1bb.stex" ]
 
 [params]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Player/Bullet Control.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Bullet/Piercing Bullet/Piercing Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Bullet/Basic Functional Bullet/Basic Bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Bullet/Copy Bullet/Copy Bullet.tscn" type="PackedScene" id=4]
+
+[node name="Bullet Control" type="Position2D"]
+position = Vector2( 30, 0 )
+script = ExtResource( 1 )
+BasicBullet = ExtResource( 3 )
+PiercingBullet = ExtResource( 2 )
+CopyBullet = ExtResource( 4 )
+
+[node name="Shot Cooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Shot Cooldown" to="." method="_on_Shot_Cooldown_timeout"]
