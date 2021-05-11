@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 15dd5e0 (Fixed Player.gd, moved Hitbox Test scene)
 extends Area2D
 
 export var standard_speed = 300	# Standard speed
@@ -33,6 +36,7 @@ func _process(delta):
 	elif is_focused == false:
 		speed = standard_speed
 		$FocusAnimation.play("default") # Placeholder blank animation
+<<<<<<< HEAD
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -78,18 +82,26 @@ func _process(delta):
 	elif is_focused == false:
 		speed = standard_speed
 		$FocusAnimation.play("default") # Placeholder blank animation
+=======
+>>>>>>> 15dd5e0 (Fixed Player.gd, moved Hitbox Test scene)
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 func kill():
 	get_tree().reload_current_scene()		
 	
 >>>>>>> 73856d9 (Switched Player script from C# to GDScript)
 =======
+=======
+>>>>>>> 15dd5e0 (Fixed Player.gd, moved Hitbox Test scene)
 	position += velocity * delta
 
 func _on_Player_body_entered(body):
 	print("Object in player body") # Stub console output for hit detection
+<<<<<<< HEAD
+>>>>>>> 15dd5e0 (Fixed Player.gd, moved Hitbox Test scene)
+=======
 >>>>>>> 15dd5e0 (Fixed Player.gd, moved Hitbox Test scene)
