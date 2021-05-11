@@ -13,20 +13,20 @@ script = ExtResource( 6 )
 position = Vector2( 512.731, 40.4788 )
 maxHP = 3
 
-[node name="Piercing Dummy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 512.731, 284.145 )
-maxHP = 999999
-copyAbility = "piercing"
-
 [node name="Rapid Dummy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 513.525, 196.044 )
+position = Vector2( 515.112, 196.044 )
 maxHP = 999999
-copyAbility = "rapid"
+copyAbility = "rapidfire"
 
 [node name="Wide Dummy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 515.906, 368.277 )
+position = Vector2( 517.494, 281.763 )
 maxHP = 999999
-copyAbility = "wide"
+copyAbility = "widebeam"
+
+[node name="Piercing Dummy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 517.494, 378.595 )
+maxHP = 999999
+copyAbility = "piercing"
 
 [node name="Charge Bar" type="ProgressBar" parent="."]
 margin_left = 513.064

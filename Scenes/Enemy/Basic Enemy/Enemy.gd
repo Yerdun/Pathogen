@@ -4,7 +4,7 @@ extends RigidBody2D
 # Declare member variables here. Examples:
 export var maxHP = 2 # the amount of hp the enemy has at spawn
 var currentHP # the enemy's current hp
-export(String, "none", "piercing", "rapid", "wide") var copyAbility	# The enemy's ability
+export(String, "none", "rapidfire", "widebeam", "piercing") var copyAbility	# The enemy's ability
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
