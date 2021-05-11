@@ -19,3 +19,5 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_Piercing_Bullet_body_entered"]
