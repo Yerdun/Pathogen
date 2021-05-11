@@ -4,13 +4,16 @@ extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 # Declare member variables here. Examples:
 export (PackedScene) var bullet
 
+export var speed = 40
+export var direction = Vector2.LEFT
 
 # Called when the node enters the scene tree for the first time.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _physics_process(delta):
+	position += speed * direction * delta # move slowly left
+
 func explode(var numberOfShots): # shoots a bunch of bullets in a circle
 	for n in numberOfShots: # Do the following code for each bullet spawned
 		var newBullet = bullet.instance() # instantiate a new bullet
@@ -26,3 +29,7 @@ func explode(var numberOfShots): # shoots a bunch of bullets in a circle
 		owner.add_child(newBullet)
 		
 		queue_free()
+
+
+func _on_Explosion_Timer_timeout():
+	explode(12)

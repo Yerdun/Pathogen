@@ -7,7 +7,7 @@
 script = ExtResource( 2 )
 
 [node name="Bomb Enemy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 368.693, 269.104 )
+position = Vector2( 770.23, 282.877 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = 637.797
