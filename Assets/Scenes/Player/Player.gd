@@ -10,7 +10,7 @@ func _ready():
 	pass # Currently unneeded, included as a stub.
 
 func _process(delta):
-	if is_dead == false:	# Disallow movement when dead
+	if !is_dead:	# Disallow movement when dead
 		var velocity = Vector2.ZERO # Movement velocity represented as a 2 dimensional vector
 		var speed = standard_speed # Speed variable. initialised to standard speed
 		var is_focused = false # Tracks whether or not player is focused
@@ -27,10 +27,10 @@ func _process(delta):
 		if Input.is_action_pressed("control_focus"):
 			is_focused = true
 		
-		if is_focused == true:
+		if is_focused:
 			speed = focus_speed
 			$FocusAnimation.play("focused") # Placeholder animation just containing 1 frame showing hitbox
-		elif is_focused == false:
+		elif !is_focused:
 			speed = standard_speed
 			$FocusAnimation.play("default") # Placeholder blank animation
 			
@@ -50,7 +50,7 @@ func _on_Player_body_entered(body):
 		$"Bullet Control".CurrentCharge = $"Bullet Control".MaxCharge	# Max copy charge if colliding with copy charger
 		body.queue_free()	# Remove body
 	
-	elif is_dead == false:	# If colliding with anything else eg. enemy, bullet, die (don't allow dying while respawning)
+	elif !is_dead:	# If colliding with anything else eg. enemy, bullet, die (don't allow dying while respawning)
 		lives -= 1	# Subtract one life
 		$PlayerAnimation.play("death")	# Play death animation (placeholder blank)
 		is_dead = true	# Set is_dead variable to true, to lock control
