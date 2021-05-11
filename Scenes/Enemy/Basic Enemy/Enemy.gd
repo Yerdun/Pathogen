@@ -2,8 +2,9 @@ extends RigidBody2D
 
 
 # Declare member variables here. Examples:
-export (int) var maxHP = 2 # the amount of hp the enemy has at spawn
+export var maxHP = 2 # the amount of hp the enemy has at spawn
 var currentHP # the enemy's current hp
+export(String, "none", "piercing", "rapid", "wide") var copyAbility	# The enemy's ability
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,5 +23,5 @@ func takeDamage(var amount): # this function can be called by a bullet to inflic
 	# amount variable is the amount of damage taken
 	currentHP = max(0, currentHP - amount) # this line caps hp loss at 0
 
-func getCopyAbility():
-	return ""
+func GetCopyAbility():
+	return copyAbility	# Since it's a string, it's supposed to return the type of ability and thus the copy bullet copies. I swear it worked earlier, but right now I have no idea what's going on
