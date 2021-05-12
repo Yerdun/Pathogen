@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Scenes/Bullet/Copy Bullet/Copy Bullet.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.3952, 15.7948 )
+extents = Vector2( 12, 16 )
 
 [node name="Copy Bullet" type="Area2D"]
 script = ExtResource( 2 )

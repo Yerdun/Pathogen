@@ -12,13 +12,14 @@ func _physics_process(delta):
 	position += Vector2.RIGHT * speed * delta # go right
 
 
-func _on_Bullet_body_entered(body):
+func _killed_enemy():
+	emit_signal("killed_enemy")
+
+
+func _on_Piercing_Bullet_body_entered(body):
 	if body.has_method("takeDamage"): # if the hit body can take damage
 		body.takeDamage(damage) # do damage to it equal to this bullet's damage value
 		if body.currentHP <= 0: # if you killed the enemy,
 			_killed_enemy() # neat! tell everyone, including the player
 	
 	# the bullet pierces, so it doesn't destroy itself
-
-func _killed_enemy():
-	emit_signal("killed_enemy")

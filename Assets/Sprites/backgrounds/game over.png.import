@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background.png-f7983ede3fb51d295708cbcfbb6ad368.stex"
+path="res://.import/game over.png-a6ae429e0af696cc9a5f15cbd2805050.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/title screen/background.png"
-dest_files=[ "res://.import/background.png-f7983ede3fb51d295708cbcfbb6ad368.stex" ]
+source_file="res://Assets/Sprites/backgrounds/game over.png"
+dest_files=[ "res://.import/game over.png-a6ae429e0af696cc9a5f15cbd2805050.stex" ]
 
 [params]
 

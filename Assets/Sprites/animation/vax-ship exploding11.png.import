@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vax-ship exploding5.png-74948f1775fbfcb05252f9d0dff2ab5a.stex"
+path="res://.import/vax-ship exploding11.png-50af64f93389ad28b3fb6048017e9af9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player/vax-ship exploding5.png"
-dest_files=[ "res://.import/vax-ship exploding5.png-74948f1775fbfcb05252f9d0dff2ab5a.stex" ]
+source_file="res://Assets/Sprites/animation/vax-ship exploding11.png"
+dest_files=[ "res://.import/vax-ship exploding11.png-50af64f93389ad28b3fb6048017e9af9.stex" ]
 
 [params]
 

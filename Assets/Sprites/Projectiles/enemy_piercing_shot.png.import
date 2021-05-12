@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/game over.png-39df7a5c6846a7d7d291ecf29d5f99b7.stex"
+path="res://.import/enemy_piercing_shot.png-0abc02275a1a9153178fe38bd2199297.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/title screen/game over.png"
-dest_files=[ "res://.import/game over.png-39df7a5c6846a7d7d291ecf29d5f99b7.stex" ]
+source_file="res://Assets/Sprites/Projectiles/enemy_piercing_shot.png"
+dest_files=[ "res://.import/enemy_piercing_shot.png-0abc02275a1a9153178fe38bd2199297.stex" ]
 
 [params]
 

@@ -4,7 +4,8 @@
 [ext_resource path="res://Assets/Sprites/Enemy/charger_enemy.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Scenes/Enemy/Piercer Enemy/Piercer Enemy.gd" type="Script" id=3]
 
-[node name="Enemy" instance=ExtResource( 1 )]
+[node name="Piercer Enemy" instance=ExtResource( 1 )]
+position = Vector2( 400, 292 )
 linear_velocity = Vector2( -400, 0 )
 applied_force = Vector2( 480, 0 )
 script = ExtResource( 3 )

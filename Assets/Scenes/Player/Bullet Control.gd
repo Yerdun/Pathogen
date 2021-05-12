@@ -14,7 +14,7 @@ var canFire # true if shot is not on cooldown
 var rapidFireEnabled # true if rapid fire enabled
 
 var wideBeamEnabled # true if shot is wide
-var wideSpacing = 30 # avoiding magic numbers; space between wide beam bullets
+var wideSpacing = 16 # avoiding magic numbers; space between wide beam bullets
 
 var piercingEnabled # true if piercing is enabled
 
@@ -59,24 +59,36 @@ func _shoot(): # handles shooting controls and cooldown
 	# if player is shooting normally and cooldown is ready...
 	elif Input.is_action_pressed("shoot") and canFire:
 		# instance selected bullet and spawn it in
-		var NewBullet = SelectedBullet.instance()
-		# normal bullets emit a signal when they kill an enemy, next line links it to function
-		NewBullet.connect("killed_enemy", self, "chargeCopyBullet")
-		owner.owner.add_child(NewBullet) # the owner of this node is the player
-		# the owner of the player is the world, which is what we want the bullet
-		# to be the child of, so that player movement does not move the bullets too
-		# place it at the firing point
-		NewBullet.position = owner.position + position
-		# the bullet is coded to move on its own, so no further action needed
+		# instanced twice because we fire 2 bullets at a time
+		var NewBullet1 = SelectedBullet.instance()
+		var NewBullet2 = SelectedBullet.instance()
+		# normal bullets emit a signal when they kill an enemy, next line links them to function
+		NewBullet1.connect("killed_enemy", self, "chargeCopyBullet")
+		NewBullet2.connect("killed_enemy", self, "chargeCopyBullet")
+		owner.owner.add_child(NewBullet1)
+		owner.owner.add_child(NewBullet2) 
+		# the owner of this node is the player
+		# the owner of the player is the world, which is what we want the bullets
+		# to be the children of, so that player movement does not move the bullets too
+		# place them at the firing points
+		NewBullet1.position = owner.position + $"Fire Point 1".position
+		NewBullet2.position = owner.position + $"Fire Point 2".position
+		# the bullets are coded to move on its own, so no further action needed
 		
-		#if the wide beam is enabled, instance two more bullets and space them
+		#if the wide beam is enabled, instance four more bullets and space them
 		if wideBeamEnabled:
-			var WideBullet1 = SelectedBullet.instance()
-			var WideBullet2 = SelectedBullet.instance()
-			owner.owner.add_child(WideBullet1)
-			owner.owner.add_child(WideBullet2)
-			WideBullet1.position = owner.position + position + wideSpacing * Vector2.UP
-			WideBullet2.position = owner.position + position + wideSpacing * Vector2.DOWN
+			var WideBullet1_1 = SelectedBullet.instance()
+			var WideBullet1_2 = SelectedBullet.instance()
+			var WideBullet2_1 = SelectedBullet.instance()
+			var WideBullet2_2 = SelectedBullet.instance()
+			owner.owner.add_child(WideBullet1_1)
+			owner.owner.add_child(WideBullet1_2)
+			owner.owner.add_child(WideBullet2_1)
+			owner.owner.add_child(WideBullet2_2)
+			WideBullet1_1.position = owner.position + $"Fire Point 1".position + wideSpacing * Vector2.UP
+			WideBullet1_2.position = owner.position + $"Fire Point 1".position + wideSpacing * Vector2.DOWN
+			WideBullet2_1.position = owner.position + $"Fire Point 2".position + wideSpacing * Vector2.UP
+			WideBullet2_2.position = owner.position + $"Fire Point 2".position + wideSpacing * Vector2.DOWN
 		# put shot on cooldown and start the cooldown timer
 		canFire = false
 		$"Shot Cooldown".start()

@@ -56,6 +56,7 @@ text = "Spawn Bomb"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="value_changed" from="Selector" to="." method="_on_Selector_value_changed"]
 [connection signal="pressed" from="Spawn Piercer" to="." method="_on_Spawn_Piercer_pressed"]
 [connection signal="pressed" from="Spawn Bomb" to="." method="_on_Spawn_Bomb_pressed"]
