@@ -3,12 +3,21 @@ extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 
 # Declare member variables here. Examples:
 export (PackedScene) var bullet
+export (AudioStream) var explosionSound
 
 # Called when the node enters the scene tree for the first time.
 
 func explode(var numberOfShots): # shoots a bunch of bullets in a circle
 	# hehe explodey noise
-	$"Explosion Sound".play()
+	# if this AudioStreamPlayer is a child of this enemy, then when the enemy
+	# destroys itself at the end of this function, it will be destroyed as well
+	# to get around that, we instead add the AudioStreamPlayer as a child of
+	# this enemy's parent, which should just be the game scene
+	var explosionPlayer = AudioStreamPlayer.new() 
+	explosionPlayer.set_stream(explosionSound)
+	get_parent().add_child(explosionPlayer)
+	explosionPlayer.play()
+	
 	for n in numberOfShots: # Do the following code for each bullet spawned
 		var newBullet = bullet.instance() # instantiate a new bullet
 		newBullet.position = position

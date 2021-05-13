@@ -11,6 +11,7 @@ script = ExtResource( 3 )
 maxHP = 4
 copyAbility = "widebeam"
 bullet = ExtResource( 2 )
+explosionSound = ExtResource( 4 )
 
 [node name="Sprite" parent="." index="1"]
 rotation = -1.5708
@@ -19,8 +20,5 @@ rotation = -1.5708
 wait_time = 5.0
 one_shot = true
 autostart = true
-
-[node name="Explosion Sound" type="AudioStreamPlayer" parent="." index="4"]
-stream = ExtResource( 4 )
 
 [connection signal="timeout" from="Explosion Timer" to="." method="_on_Explosion_Timer_timeout"]
