@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/level_WIP.wav-f1e14e02d5b4e0a7ef26aa41d70f79c8.sample"
+path="res://.import/level_WIP.wav-d86d6f375ec193acf54a84f761293ef2.sample"
 
 [deps]
 
-source_file="res://Assets/level_WIP.wav"
-dest_files=[ "res://.import/level_WIP.wav-f1e14e02d5b4e0a7ef26aa41d70f79c8.sample" ]
+source_file="res://level_WIP.wav"
+dest_files=[ "res://.import/level_WIP.wav-d86d6f375ec193acf54a84f761293ef2.sample" ]
 
 [params]
 
