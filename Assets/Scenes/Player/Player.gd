@@ -52,7 +52,8 @@ func _on_Player_body_entered(body):
 	
 	elif !is_dead:	# If colliding with anything else eg. enemy, bullet, die (don't allow dying while respawning)
 		lives -= 1	# Subtract one life
-		$PlayerAnimation.play("death")	# Play death animation (placeholder blank)
+		$PlayerAnimation.play("death")	# Play death animation
+		$"Death Sound".play() # Play death sound
 		is_dead = true	# Set is_dead variable to true, to lock control
 		yield(get_tree().create_timer(0.5), "timeout")	# Wait half a second
 		if lives >= 1:	# When player still has lives

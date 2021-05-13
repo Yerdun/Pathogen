@@ -7,6 +7,8 @@ export (PackedScene) var bullet
 # Called when the node enters the scene tree for the first time.
 
 func explode(var numberOfShots): # shoots a bunch of bullets in a circle
+	# hehe explodey noise
+	$"Explosion Sound".play()
 	for n in numberOfShots: # Do the following code for each bullet spawned
 		var newBullet = bullet.instance() # instantiate a new bullet
 		newBullet.position = position

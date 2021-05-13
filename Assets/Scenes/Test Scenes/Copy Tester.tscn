@@ -62,5 +62,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="KillButton" to="." method="_on_KillButton_pressed"]
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

@@ -13,6 +13,7 @@ func _physics_process(delta):
 
 
 func _on_Bullet_body_entered(body):
+	
 	if body.has_method("takeDamage"): # if the hit body can take damage
 		body.takeDamage(damage) # do damage to it equal to this bullet's damage value
 		if body.currentHP <= 0: # if you killed the enemy,

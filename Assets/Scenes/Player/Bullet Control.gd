@@ -39,6 +39,8 @@ func _process(_delta):
 func _shoot(): # handles shooting controls and cooldown
 	# if player is trying to use copy ability, cd is ready, and charge is max 
 	if Input.is_action_pressed("copy") and canFire and CurrentCharge == MaxCharge:
+		# play copy attempt sound
+		$"Copy Fire".play()
 		#instance a copy bullet
 		var NewCopyBullet = CopyBullet.instance()
 		# the Copy Bullet emits signals based on the enemy it hits
@@ -58,6 +60,11 @@ func _shoot(): # handles shooting controls and cooldown
 	# by putting an elif here, copy ability has priority over normal shot
 	# if player is shooting normally and cooldown is ready...
 	elif Input.is_action_pressed("shoot") and canFire:
+		# depending on if pierce shot is active or not, play normal or piercing effect
+		if piercingEnabled:
+			$"Pierce Fire".play()
+		else:
+			$"Normal Fire".play()
 		# instance selected bullet and spawn it in
 		# instanced twice because we fire 2 bullets at a time
 		var NewBullet1 = SelectedBullet.instance()
@@ -98,19 +105,28 @@ func _shoot(): # handles shooting controls and cooldown
 func _enableRapidFire(): # when called, enables rapid fire
 	if !rapidFireEnabled:
 		$"Shot Cooldown".wait_time = .25
+		$"Copy Success".play()
 	rapidFireEnabled = true
 
 func _enableWideBeam(): # when called, enables wide beam
-	wideBeamEnabled = true
+	if !wideBeamEnabled:
+		wideBeamEnabled = true
+		$"Copy Success".play()
 
 func _enablePiercing(): # when called, enables piercing
 	if !piercingEnabled:
 		SelectedBullet = PiercingBullet
+		$"Copy Success".play()
 	piercingEnabled = true
 
 func _on_Shot_Cooldown_timeout(): # connected to cooldown timer
 	canFire = true # when the cooldown finishes, prepare a new shot
 
 func chargeCopyBullet(): # call this function when an enemy dies
+	# play enemy damage sound (for some reason, it doesn't play on enemy kill)
+	$"Enemy Impact".play()
+	# play copy ready sound if the charge bar is filled for the first time
+	if CurrentCharge + 1 == MaxCharge:
+		$"Copy Ready".play()
 	# if current charge is max, do nothing, but if current charge is below max, increment by 1
 	CurrentCharge = min(MaxCharge, CurrentCharge + 1)

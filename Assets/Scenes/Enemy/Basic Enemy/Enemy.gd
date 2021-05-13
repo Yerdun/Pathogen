@@ -19,6 +19,8 @@ func _tryDying(): # called every frame to see if the enemy is dead
 
 func takeDamage(var amount): # this function can be called by a bullet to inflict damage
 	# amount variable is the amount of damage taken
+	
+	$"Enemy Impact".play() # play enemy taking damage sound
 	currentHP = max(0, currentHP - amount) # this line caps hp loss at 0
 
 func GetCopyAbility():

@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player/Bullet Control.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scenes/Bullet/Piercing Bullet/Piercing Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Scenes/Bullet/Basic Functional Bullet/Basic Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scenes/Bullet/Copy Bullet/Copy Bullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Sounds/Player Sounds/player_copy_ready.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sounds/Player Sounds/player_pierce_shoot.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/Player Sounds/player_copy_attempt.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/Player Sounds/player_basic_shoot.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sounds/Enemy Sounds/enemy_takedamage.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sounds/Player Sounds/player_copy_success.wav" type="AudioStream" id=10]
 
 [node name="Bullet Control" type="Position2D"]
 script = ExtResource( 1 )
@@ -20,5 +26,23 @@ position = Vector2( 0, -24 )
 
 [node name="Fire Point 2" type="Position2D" parent="."]
 position = Vector2( 0, 24 )
+
+[node name="Normal Fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Pierce Fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Copy Ready" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Copy Fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Copy Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Enemy Impact" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 
 [connection signal="timeout" from="Shot Cooldown" to="." method="_on_Shot_Cooldown_timeout"]

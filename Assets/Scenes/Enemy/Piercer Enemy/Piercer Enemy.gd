@@ -26,4 +26,5 @@ func _physics_process(delta):
 
 func _on_Charge_Timer_timeout(): # when the charge timer runs out...
 	# chaaaaaarge!
+	$"Charge Sound".play()
 	linear_velocity.x = -1 * charge_speed # the -1 makes it go left
