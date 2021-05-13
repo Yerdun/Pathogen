@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_pierce_shoot.wav-04953eae5faa8ab365a9e46d403a7f83.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Player Sounds/player_pierce_shoot.wav"
+dest_files=[ "res://.import/player_pierce_shoot.wav-04953eae5faa8ab365a9e46d403a7f83.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
