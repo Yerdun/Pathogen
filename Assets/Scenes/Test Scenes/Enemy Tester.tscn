@@ -26,4 +26,5 @@ __meta__ = {
 position = Vector2( 760.695, 166.336 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

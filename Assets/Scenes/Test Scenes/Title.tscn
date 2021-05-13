@@ -18,6 +18,7 @@ animations = [ {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 400.763, 299.68 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Button" type="Button" parent="."]
@@ -30,4 +31,5 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
