@@ -4,9 +4,11 @@
 [ext_resource path="res://Assets/Scenes/Bullet/Enemy Bullet/Enemy Bullet.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-height = 8.0
+radius = 12.0055
+height = 8.4684
 
-[node name="Enemy Bullet" type="KinematicBody2D"]
+[node name="Enemy Bullet" type="Area2D"]
+collision_layer = 2
 script = ExtResource( 2 )
 speed = 400
 

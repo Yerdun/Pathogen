@@ -1,17 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Sprites/backgrounds/background.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Scenes/Test Scenes/go to test.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scenes/Test Scenes/Copy Tester.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Scenes/Enemy/Basic Enemy/Enemy.tscn" type="PackedScene" id=7]
 
 [node name="Copy Tester" type="Node"]
 script = ExtResource( 6 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 388.438, 290.995 )
-texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
@@ -52,15 +46,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 58.6547
-margin_top = 558.345
-margin_right = 224.655
-margin_bottom = 578.345
-text = "Go to Test Level"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="pressed" from="KillButton" to="." method="_on_KillButton_pressed"]
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
