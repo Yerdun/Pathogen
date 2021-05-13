@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Enemy Spawn Handler.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scenes/Test Scenes/Enemy Spawn Tester.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/Enemy/Piercer Enemy/Piercer Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scenes/Enemy/Bomb Enemy/Bomb Enemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Test Wave 1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/DefaultWave.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Wave Manager.tscn" type="PackedScene" id=6]
 
 [node name="Enemy Spawn Tester" type="Node"]
 script = ExtResource( 2 )
@@ -68,6 +69,8 @@ text = "Test Wave"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Wave Manager" parent="." instance=ExtResource( 6 )]
 
 [connection signal="value_changed" from="Selector" to="." method="_on_Selector_value_changed"]
 [connection signal="pressed" from="Spawn Piercer" to="." method="_on_Spawn_Piercer_pressed"]

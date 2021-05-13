@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/DefaultWave.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 1.gd" type="Script" id=2]
+
+[node name="Wave" instance=ExtResource( 1 )]
+script = ExtResource( 2 )

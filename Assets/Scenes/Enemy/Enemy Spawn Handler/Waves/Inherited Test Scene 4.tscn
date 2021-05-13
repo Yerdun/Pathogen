@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/DefaultWave.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 4.gd" type="Script" id=2]
+
+[node name="Wave" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+bombEnemy = null
+
+[node name="Stagger Timer" type="Timer" parent="." index="0"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Stagger Timer" to="." method="_on_Stagger_Timer_timeout"]
