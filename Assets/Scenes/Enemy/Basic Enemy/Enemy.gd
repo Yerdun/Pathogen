@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export var maxHP = 2 # the amount of hp the enemy has at spawn
+export var maxHP = 8 # the amount of hp the enemy has at spawn
 var currentHP # the enemy's current hp
 export(String, "none", "rapidfire", "widebeam", "piercing", "speedup") var copyAbility	# The enemy's ability that can be copied
 
