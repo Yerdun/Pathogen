@@ -1,7 +1,6 @@
 extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 
 export (PackedScene) var bullet
-#export (AudioStream) var shotSound
 
 export var bulletsToShoot = 10
 var isShooting
