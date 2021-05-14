@@ -6,6 +6,8 @@ extends Node2D
 # references to the enemy scenes
 export (PackedScene) var bombEnemy
 export (PackedScene) var piercerEnemy
+export (PackedScene) var chaserEnemy
+export (PackedScene) var shooterEnemy
 
 
 # Called when the node enters the scene tree for the first time.
