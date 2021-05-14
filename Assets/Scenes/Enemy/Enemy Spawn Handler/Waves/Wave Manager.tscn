@@ -1,17 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Wave Manager.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 3.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scenes/Level/Waves/Wave 4.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scenes/Level/Waves/Wave 2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/Level/Waves/Wave 1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scenes/Level/Waves/Wave 3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scenes/Level/Waves/Wave 5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Scenes/Level/Waves/Wave 0.tscn" type="PackedScene" id=7]
 
 [node name="Wave Manager" type="Node"]
 script = ExtResource( 1 )
-wave0 = ExtResource( 2 )
-wave1 = ExtResource( 3 )
-wave2 = ExtResource( 4 )
+wave0 = ExtResource( 7 )
+wave1 = ExtResource( 4 )
+wave2 = ExtResource( 3 )
 wave3 = ExtResource( 5 )
+wave4 = ExtResource( 2 )
+wave5 = ExtResource( 6 )
 
 [node name="Spawn Timer" type="Timer" parent="."]
 wait_time = 5.0

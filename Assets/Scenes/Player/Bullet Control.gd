@@ -4,7 +4,8 @@ export (PackedScene) var BasicBullet # reference to basic bullet
 export (PackedScene) var PiercingBullet # reference to piercing bullet
 export (PackedScene) var CopyBullet # reference to the copy bullet
 
-export (int) var MaxCharge = 15 # number of enemies to be killed before copy bullet is ready
+export (int) var StartingMaxCharge = 15 # default value for MaxCharge
+var MaxCharge = StartingMaxCharge # number of enemies to be killed before copy bullet is ready
 var CurrentCharge # current progress to charge copy bullet
 
 var SelectedBullet # the currently active bullet
@@ -18,36 +19,61 @@ var wideSpacing = 16 # avoiding magic numbers; space between wide beam bullets
 
 var piercingEnabled # true if piercing is enabled
 
+export (int) var speedupStandard = 450
+export (int) var speedupFocus = 200
+var speedupEnabled	# true if speedup is enabled
+
+var secretCount
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SelectedBullet = BasicBullet # defaults selected bullet as basic bullet
 	canFire = true # ready shot cooldown immediately
-	rapidFireEnabled = false # default the bullet as basic as possible
+	rapidFireEnabled = false # default to no powerups
 	wideBeamEnabled = false
 	piercingEnabled = false
-	
+	speedupEnabled = false
 	CurrentCharge = 0
+	secretCount = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if owner.is_dead == false:	# If player is not dead
+	if !owner.is_dead:	# If player is not dead
 		_shoot() 	# Allow player to shoot
 
+	elif owner.is_dead:	# Reset all powerups and charge requirement on death
+		SelectedBullet = BasicBullet
+		rapidFireEnabled = false
+		wideBeamEnabled = false
+		piercingEnabled = false
+		speedupEnabled = false
+		$"Shot Cooldown".wait_time = .5
+		owner.standard_speed = owner.default_standard_speed
+		owner.focus_speed = owner.default_focus_speed
+		CurrentCharge = 0
+		MaxCharge = StartingMaxCharge
+		secretCount = 0
+		
+
 func _shoot(): # handles shooting controls and cooldown
+	if Input.is_action_pressed("copy") and canFire and CurrentCharge == MaxCharge and secretCount == 4:
+		$"secret".play()
+		CurrentCharge = 0
+		
 	# if player is trying to use copy ability, cd is ready, and charge is max 
-	if Input.is_action_pressed("copy") and canFire and CurrentCharge == MaxCharge:
+	elif Input.is_action_pressed("copy") and canFire and CurrentCharge == MaxCharge:
 		# play copy attempt sound
 		$"Copy Fire".play()
 		#instance a copy bullet
 		var NewCopyBullet = CopyBullet.instance()
 		# the Copy Bullet emits signals based on the enemy it hits
-		# the next three lines connect those signals to functions in this script
+		# the next four lines connect those signals to functions in this script, if not already connected
 		NewCopyBullet.connect("copied_rapidfire", self, "_enableRapidFire")
 		NewCopyBullet.connect("copied_widebeam", self, "_enableWideBeam")
 		NewCopyBullet.connect("copied_piercing", self, "_enablePiercing")
+		NewCopyBullet.connect("copied_speedup", self, "_enableSpeedup")
 		# put the bullet into the world
 		owner.owner.add_child(NewCopyBullet)
 		NewCopyBullet.position = owner.position + position
@@ -96,6 +122,11 @@ func _shoot(): # handles shooting controls and cooldown
 			WideBullet1_2.position = owner.position + $"Fire Point 1".position + wideSpacing * Vector2.DOWN
 			WideBullet2_1.position = owner.position + $"Fire Point 2".position + wideSpacing * Vector2.UP
 			WideBullet2_2.position = owner.position + $"Fire Point 2".position + wideSpacing * Vector2.DOWN
+			# Link to the copy charge bullet function if any of the wide bullets kill
+			WideBullet1_1.connect("killed_enemy", self, "chargeCopyBullet")
+			WideBullet1_2.connect("killed_enemy", self, "chargeCopyBullet")
+			WideBullet2_1.connect("killed_enemy", self, "chargeCopyBullet")
+			WideBullet2_2.connect("killed_enemy", self, "chargeCopyBullet")
 		# put shot on cooldown and start the cooldown timer
 		canFire = false
 		$"Shot Cooldown".start()
@@ -106,18 +137,33 @@ func _enableRapidFire(): # when called, enables rapid fire
 	if !rapidFireEnabled:
 		$"Shot Cooldown".wait_time = .25
 		$"Copy Success".play()
-	rapidFireEnabled = true
+		rapidFireEnabled = true
+		MaxCharge += 5	# Add 5 required kills to Max Charge to balance copy abilities
+		secretCount += 1
 
 func _enableWideBeam(): # when called, enables wide beam
 	if !wideBeamEnabled:
-		wideBeamEnabled = true
 		$"Copy Success".play()
+		wideBeamEnabled = true
+		MaxCharge += 5
+		secretCount += 1 
 
 func _enablePiercing(): # when called, enables piercing
 	if !piercingEnabled:
 		SelectedBullet = PiercingBullet
 		$"Copy Success".play()
-	piercingEnabled = true
+		piercingEnabled = true
+		MaxCharge += 5
+		secretCount += 1
+
+func _enableSpeedup():
+	if !speedupEnabled:
+		$"Copy Success".play()
+		owner.standard_speed = speedupStandard
+		owner.focus_speed = speedupFocus
+		speedupEnabled = true
+		MaxCharge += 5
+		secretCount += 1
 
 func _on_Shot_Cooldown_timeout(): # connected to cooldown timer
 	canFire = true # when the cooldown finishes, prepare a new shot
@@ -130,3 +176,8 @@ func chargeCopyBullet(): # call this function when an enemy dies
 		$"Copy Ready".play()
 	# if current charge is max, do nothing, but if current charge is below max, increment by 1
 	CurrentCharge = min(MaxCharge, CurrentCharge + 1)
+	# Call this here since it checks when an enemy dies
+	GlobalVariables.enemiesKilled += 1	# Increment kill count by 1
+	if GlobalVariables.enemiesKilled % 100 == 0:
+		owner.lives += 1	# Grant a life for every 100 kills
+		$"Copy Success".play()

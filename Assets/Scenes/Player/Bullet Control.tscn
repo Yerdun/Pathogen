@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player/Bullet Control.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scenes/Bullet/Piercing Bullet/Piercing Bullet.tscn" type="PackedScene" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Assets/Sounds/Player Sounds/player_pierce_shoot.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sounds/Player Sounds/player_copy_attempt.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/Player Sounds/player_basic_shoot.wav" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Sounds/Enemy Sounds/enemy_takedamage.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sounds/Player Sounds/player_die.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sounds/Player Sounds/player_copy_success.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Sounds/Other Sounds/44429__thecheeseman__hurt2.wav" type="AudioStream" id=11]
 
 [node name="Bullet Control" type="Position2D"]
 script = ExtResource( 1 )
@@ -44,5 +45,9 @@ stream = ExtResource( 10 )
 
 [node name="Enemy Impact" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+
+[node name="secret" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = 5.0
 
 [connection signal="timeout" from="Shot Cooldown" to="." method="_on_Shot_Cooldown_timeout"]

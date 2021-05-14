@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Scenes/Old Scenes/Enzo/pathogen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Scenes/Old Scenes/Enzo/Sprites/background.png" type="Texture" id=3]
 
-
 [node name="Test_Scene" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]

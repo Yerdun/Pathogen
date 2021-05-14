@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Sprites/backgrounds/victory.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Scenes/Menus/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scenes/Menus/Victory.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sounds/Other Sounds/menu_click.wav" type="AudioStream" id=4]
+
+[node name="Victory" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Title" parent="." instance=ExtResource( 2 )]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 924.0
+margin_bottom = 599.0
+color = Color( 0.133333, 0.12549, 0.203922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -12, 0 )
+scale = Vector2( 1.04139, 0.941082 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Button" type="Button" parent="."]
+margin_left = 75.0
+margin_top = 300.0
+margin_right = 233.0
+margin_bottom = 383.0
+text = "Return to Title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="."]
+margin_left = 80.0
+margin_top = 210.0
+margin_right = 198.0
+margin_bottom = 275.0
+text = "Loops cleared: 
+Lasted until Wave:
+Max abilities: 
+Enemies killed:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
