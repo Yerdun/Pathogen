@@ -22,7 +22,11 @@ animations = [ {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 400.763, 299.68 )
 frames = SubResource( 1 )
+<<<<<<< HEAD
 frame = 1
+=======
+frame = 2
+>>>>>>> Miguel-branch
 playing = true
 
 [node name="Button" type="Button" parent="."]

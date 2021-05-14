@@ -7,6 +7,8 @@ var spawner
 # references to the types of enemies
 export (PackedScene) var bombEnemy
 export (PackedScene) var piercerEnemy
+export (PackedScene) var shooterEnemy
+export (PackedScene) var chaserEnemy
 
 # how long this wave will last
 func getWaveLength():
