@@ -36,10 +36,13 @@ __meta__ = {
 
 [node name="Score" type="Label" parent="."]
 margin_left = 80.0
-margin_top = 250.0
-margin_right = 177.0
-margin_bottom = 264.0
-text = "Loops cleared: "
+margin_top = 210.0
+margin_right = 198.0
+margin_bottom = 275.0
+text = "Loops cleared: 
+Lasted until Wave:
+Max abilities: 
+Enemies killed:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

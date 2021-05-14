@@ -140,6 +140,7 @@ func _enableRapidFire(): # when called, enables rapid fire
 		rapidFireEnabled = true
 		MaxCharge += 5	# Add 5 required kills to Max Charge to balance copy abilities
 		secretCount += 1
+		GlobalVariables.mostPowers += 1
 
 func _enableWideBeam(): # when called, enables wide beam
 	if !wideBeamEnabled:
@@ -147,6 +148,7 @@ func _enableWideBeam(): # when called, enables wide beam
 		wideBeamEnabled = true
 		MaxCharge += 5
 		secretCount += 1 
+		GlobalVariables.mostPowers += 1
 
 func _enablePiercing(): # when called, enables piercing
 	if !piercingEnabled:
@@ -155,6 +157,7 @@ func _enablePiercing(): # when called, enables piercing
 		piercingEnabled = true
 		MaxCharge += 5
 		secretCount += 1
+		GlobalVariables.mostPowers += 1
 
 func _enableSpeedup():
 	if !speedupEnabled:
@@ -164,6 +167,7 @@ func _enableSpeedup():
 		speedupEnabled = true
 		MaxCharge += 5
 		secretCount += 1
+		GlobalVariables.mostPowers += 1
 
 func _on_Shot_Cooldown_timeout(): # connected to cooldown timer
 	canFire = true # when the cooldown finishes, prepare a new shot
@@ -176,3 +180,8 @@ func chargeCopyBullet(): # call this function when an enemy dies
 		$"Copy Ready".play()
 	# if current charge is max, do nothing, but if current charge is below max, increment by 1
 	CurrentCharge = min(MaxCharge, CurrentCharge + 1)
+	# Since kills are incremented when this function is called, increment the Global Kill counter as well
+	GlobalVariables.enemiesKilled += 1
+	if GlobalVariables.enemiesKilled % 50 == 0:
+		owner.lives += 1	# Grant a life for every 50 kills
+		$"Bullet Control/Copy Success".play()

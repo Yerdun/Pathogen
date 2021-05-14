@@ -8,12 +8,8 @@ var loopCount
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"Score".text = "Loops cleared: " + str(GlobalVariables.finalLoopCount)	+ "\nWaves in loop survived: " + str(GlobalVariables.final)# Print the amount of loops the player has gone through
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	# Print the player's score
+	$"Score".text = "Loops cleared: " + str(GlobalVariables.finalLoopCount)	+ "\nLasted until Wave: " + str(GlobalVariables.finalWave) + "\nMax abilities: " + str(GlobalVariables.mostPowers) + "\nEnemies killed: " + str(GlobalVariables.enemiesKilled)
 
 
 func _on_Button_pressed():
