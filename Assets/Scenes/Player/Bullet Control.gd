@@ -140,7 +140,6 @@ func _enableRapidFire(): # when called, enables rapid fire
 		rapidFireEnabled = true
 		MaxCharge += 5	# Add 5 required kills to Max Charge to balance copy abilities
 		secretCount += 1
-		GlobalVariables.mostPowers += 1
 
 func _enableWideBeam(): # when called, enables wide beam
 	if !wideBeamEnabled:
@@ -148,7 +147,6 @@ func _enableWideBeam(): # when called, enables wide beam
 		wideBeamEnabled = true
 		MaxCharge += 5
 		secretCount += 1 
-		GlobalVariables.mostPowers += 1
 
 func _enablePiercing(): # when called, enables piercing
 	if !piercingEnabled:
@@ -157,7 +155,6 @@ func _enablePiercing(): # when called, enables piercing
 		piercingEnabled = true
 		MaxCharge += 5
 		secretCount += 1
-		GlobalVariables.mostPowers += 1
 
 func _enableSpeedup():
 	if !speedupEnabled:
@@ -167,7 +164,6 @@ func _enableSpeedup():
 		speedupEnabled = true
 		MaxCharge += 5
 		secretCount += 1
-		GlobalVariables.mostPowers += 1
 
 func _on_Shot_Cooldown_timeout(): # connected to cooldown timer
 	canFire = true # when the cooldown finishes, prepare a new shot
