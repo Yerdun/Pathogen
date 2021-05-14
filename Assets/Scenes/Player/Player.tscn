@@ -25,15 +25,15 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), null ],
-"loop": true,
-"name": "respawned",
-"speed": 60.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "death",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 1 ), null ],
+"loop": true,
+"name": "respawned",
+"speed": 60.0
 } ]
 
 [sub_resource type="SpriteFrames" id=2]

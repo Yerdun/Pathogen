@@ -67,5 +67,8 @@ func _on_Player_body_entered(body):
 			can_die = true	# Allow the player to die again
 			$PlayerAnimation.play("default")	# Return to default animation
 		
+		elif $"../Wave Manager".loopCounter > 0:	# Victory routine
+			get_tree().change_scene("res://Assets/Scenes/Menus/Victory.tscn")
+			
 		else:	# Game over routine
 			get_tree().change_scene("res://Assets/Scenes/Menus/Game Over.tscn")

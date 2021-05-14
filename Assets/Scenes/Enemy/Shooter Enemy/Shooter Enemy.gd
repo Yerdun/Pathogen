@@ -42,7 +42,23 @@ func _shoot(numBullets):
 	
 	yield(get_tree().create_timer(2), "timeout")	# Wait 2 seconds after firing
 	var chargePosition = $"../Player".get_position()	# Need to get player position again, since this is out of the loop
+	printCalculations()
 	linear_velocity = startingVelocity * Vector2(cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# When neutralised, this should move towards the player at the starting velocity. My vector mathematics might be off
 	applied_force = stoppingForce * Vector2 (cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# Likewise, this should be the starting force, in the opposite direction, of the angle between the enemy and the player
 	# Oddly, the two lines above sometimes causes it to freak out and oscillate up and down very rapidly. I don't know why.
 	isShooting = false	# Set isShooting to false, so it can shoot again
+	
+func printCalculations():	# Temporary function to figure out what's going on
+	var chargePosition = $"../Player".get_position()
+	print("Angle between the player and enemy")
+	var angle = chargePosition.angle_to_point(position)
+	print(angle)
+	print("Cosine of this value:")
+	print(cos(angle))
+	print("Sine of this value:")
+	print(sin(angle))
+	print("Velocity given to enemy:")
+	print(startingVelocity * Vector2(cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position))))
+	print("Force acted upon enemy:")
+	print(stoppingForce * Vector2(cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position))))
+	print("\n")

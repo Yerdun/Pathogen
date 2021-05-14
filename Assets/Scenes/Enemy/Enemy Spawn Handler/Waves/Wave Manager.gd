@@ -16,7 +16,10 @@ export (PackedScene) var wave5
 var randomizedList
 var defaultList
 
+var loopCounter = 0	# counts how many loops you have
+
 func _ready():
+	loopCounter = 0
 	defaultList = range(6) # I assume I'll just make 6 waves
 	randomizedList = []
 	print(defaultList)
@@ -34,7 +37,10 @@ func _on_Spawn_Timer_timeout(): # every time the timer runs out, try to spawn a 
 	# Spawn Timer autofires, when it runs out the first time the game starts for real
 	# if no more waves exist, then win!
 	if randomizedList.size() == 0:
-		print("You win!")
+		# Loop: Reroll and start another set of six waves
+		loopCounter += loopCounter + 1
+		print("Loop #", loopCounter + 1)
+		_ready()
 	else: # but if waves exist:
 		var nextWaveNumber = randomizedList.pop_front()
 		var nextWaveScene
