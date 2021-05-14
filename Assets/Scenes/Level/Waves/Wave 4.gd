@@ -35,8 +35,8 @@ func _on_Timer2_timeout():
 
 
 func _on_Timer3_timeout():
-	spawner.spawnEnemy(shooterEnemy, 3, "copy")
-	spawner.spawnEnemy(bombEnemy, 4, "none")
+	spawner.spawnEnemy(shooterEnemy, 3, "none")
+	spawner.spawnEnemy(bombEnemy, 4, "copy")
 	spawner.spawnEnemy(shooterEnemy, 5, "none")
 	$Timer4.start()
 

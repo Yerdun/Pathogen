@@ -2,7 +2,7 @@ extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 
 export (PackedScene) var bullet
 
-export var bulletsToShoot = 8	# How many bullets the enemy will shoot
+export var bulletsToShoot = 10	# How many bullets the enemy will shoot
 export var startingVelocity = 660	# The velocity the enemy enters the scene with
 export var stoppingForce = -880	# The counteractive force that stops the enemy
 var isShooting	# Boolean used to store shooting status

@@ -39,7 +39,7 @@ animations = [ {
 
 [node name="Chaser Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-maxHP = 4
+maxHP = 6
 copyAbility = "speedup"
 
 [node name="Sprite" parent="." index="1"]

@@ -37,7 +37,7 @@ func _on_Spawn_Timer_timeout(): # every time the timer runs out, try to spawn a 
 	# if no more waves exist, then win!
 	if randomizedList.size() == 0:
 		# Loop: Reroll and start another set of six waves
-		loopCounter += loopCounter + 1
+		loopCounter += 1
 		print("Loop #", loopCounter + 1)
 		_ready()
 	else: # but if waves exist:

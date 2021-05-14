@@ -1,6 +1,12 @@
 extends Node2D
 
 # This script is for UI elements and keeping track of score
+func _ready():
+	# Reset all scores to 0 on game start
+	GlobalVariables.finalLoopCount = 0
+	GlobalVariables.finalWave = 0
+	GlobalVariables.enemiesKilled = 0
+	GlobalVariables.mostPowers = 0
 
 func _process(delta):
 	GlobalVariables.finalLoopCount = $"Wave Manager".loopCounter	# Set loop count to current loop
@@ -11,6 +17,9 @@ func _process(delta):
 	$"Charge Bar".value = $"Player/Bullet Control".CurrentCharge	# Set the Charge Bar's value to a percentage of the Player's current charge
 	if $"Player/Bullet Control".CurrentCharge == $"Player/Bullet Control".MaxCharge:
 		$"Copy Bar text".text = "Copy ready!"	# Display message when copy is ready
+	elif $"Player/Bullet Control".secretCount == 4 and Input.is_action_pressed("copy"):
+		$"Copy Bar text".text = "Fool!"
+		yield(get_tree().create_timer(3), "timeout")
 	else:
 		$"Copy Bar text".text = "Copy Ability Charging..."
 	$"Lives".text = "x " + str($"Player".lives)

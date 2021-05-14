@@ -4,7 +4,7 @@ export (PackedScene) var BasicBullet # reference to basic bullet
 export (PackedScene) var PiercingBullet # reference to piercing bullet
 export (PackedScene) var CopyBullet # reference to the copy bullet
 
-export (int) var StartingMaxCharge = 10 # default value for MaxCharge
+export (int) var StartingMaxCharge = 15 # default value for MaxCharge
 var MaxCharge = StartingMaxCharge # number of enemies to be killed before copy bullet is ready
 var CurrentCharge # current progress to charge copy bullet
 
@@ -180,8 +180,8 @@ func chargeCopyBullet(): # call this function when an enemy dies
 		$"Copy Ready".play()
 	# if current charge is max, do nothing, but if current charge is below max, increment by 1
 	CurrentCharge = min(MaxCharge, CurrentCharge + 1)
-	# Since kills are incremented when this function is called, increment the Global Kill counter as well
-	GlobalVariables.enemiesKilled += 1
-	if GlobalVariables.enemiesKilled % 50 == 0:
-		owner.lives += 1	# Grant a life for every 50 kills
-		$"Bullet Control/Copy Success".play()
+	# Call this here since it checks when an enemy dies
+	GlobalVariables.enemiesKilled += 1	# Increment kill count by 1
+	if GlobalVariables.enemiesKilled % 100 == 0:
+		owner.lives += 1	# Grant a life for every 100 kills
+		$"Copy Success".play()

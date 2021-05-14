@@ -21,7 +21,7 @@ func getWaveLength():
 
 
 func _on_Timer_timeout():
-	spawner.spawnEnemy(piercerEnemy, 6, "none")
+	spawner.spawnEnemy(piercerEnemy, 6, "copy")
 	$Timer2.start()
 
 
