@@ -17,7 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	# Enemy starts out moving, opposite force slows it to a halt
-	if linear_velocity.x >= 0:	# When the force pushes it enough to move right
+	if linear_velocity.dot(applied_force) > 0:	# Dot product is negative if two vectors are in opposite directions. but turns positive when they're in the same direction. So when the force is enough to turn the object in the other direction...
 		applied_force = Vector2.ZERO	# Stop the enemy (no force, no velocity)
 		linear_velocity.x = 0
 		if !isShooting:	# If the enemy is currently not shooting

@@ -18,6 +18,10 @@ config/name="Pathogen"
 run/main_scene="res://Assets/Scenes/Menus/Title.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalVariables="*res://GlobalVariables.gd"
+
 [display]
 
 window/size/width=800

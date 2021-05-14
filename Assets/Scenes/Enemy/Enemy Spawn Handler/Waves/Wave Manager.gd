@@ -16,10 +16,10 @@ export (PackedScene) var wave5
 var randomizedList
 var defaultList
 
-var loopCounter = 0	# counts how many loops you have
+var loopCounter	# counts how many loops you have
 
 func _ready():
-	loopCounter = 0
+	loopCounter = 0	# initialise loop counter to zero
 	defaultList = range(6) # I assume I'll just make 6 waves
 	randomizedList = []
 	print(defaultList)

@@ -8,7 +8,7 @@ var loopCount
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"Loop amount".text = $"../Wave Manager".loopCounter
+	$"Loop amount".text = str(GlobalVariables.finalLoopCount)	# Print the amount of loops the player has gone through
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

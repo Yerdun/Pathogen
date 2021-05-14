@@ -68,6 +68,7 @@ func _on_Player_body_entered(body):
 			$PlayerAnimation.play("default")	# Return to default animation
 		
 		elif $"../Wave Manager".loopCounter > 0:	# Victory routine
+			GlobalVariables.finalLoopCount = $"../Wave Manager".loopCounter	# Set the global loop count variable to what is in loopCounter
 			get_tree().change_scene("res://Assets/Scenes/Menus/Victory.tscn")
 			
 		else:	# Game over routine
