@@ -1,6 +1,6 @@
 extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 
-export var speed = 180	# How fast the enemy moves towards the player
+export var speed = 240	# How fast the enemy moves towards the player
 
 
 # Called when the node enters the scene tree for the first time.

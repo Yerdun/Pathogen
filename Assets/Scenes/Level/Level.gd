@@ -12,3 +12,4 @@ func _process(delta):
 	else:
 		$"Copy Bar text".text = "Copy Ability Charging..."
 	$"Lives".text = "x " + str($"Player".lives)
+	$"Wave Number".text = "Wave: " + str(6 - $"Wave Manager".randomizedList.size()) + " / 6\nLoop: " + str($"Wave Manager".loopCounter + 1)

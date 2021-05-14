@@ -49,6 +49,7 @@ func _process(_delta):
 		wideBeamEnabled = false
 		piercingEnabled = false
 		speedupEnabled = false
+		$"Shot Cooldown".wait_time = .5
 		owner.standard_speed = owner.default_standard_speed
 		owner.focus_speed = owner.default_focus_speed
 		CurrentCharge = 0

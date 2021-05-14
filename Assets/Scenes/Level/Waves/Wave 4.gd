@@ -9,8 +9,8 @@ extends "res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Default Wave.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	._ready()
-	spawner.spawnEnemy(shooterEnemy, 1)
-	spawner.spawnEnemy(shooterEnemy, 2)
+	spawner.spawnEnemy(shooterEnemy, 1, "none")
+	spawner.spawnEnemy(shooterEnemy, 2, "none")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,36 +22,36 @@ func getWaveLength():
 
 
 func _on_Timer_timeout():
-	spawner.spawnEnemy(shooterEnemy, 6)
-	spawner.spawnEnemy(shooterEnemy, 7)
+	spawner.spawnEnemy(piercerEnemy, 6, "none")
+	spawner.spawnEnemy(piercerEnemy, 7, "none")
 	$Timer2.start()
 
 
 func _on_Timer2_timeout():
-	spawner.spawnEnemy(shooterEnemy, 3)
-	spawner.spawnEnemy(shooterEnemy, 4)
-	spawner.spawnEnemy(shooterEnemy, 5)
+	spawner.spawnEnemy(bombEnemy, 3, "none")
+	spawner.spawnEnemy(shooterEnemy, 4, "none")
+	spawner.spawnEnemy(bombEnemy, 5, "none")
 	$Timer3.start()
 
 
 func _on_Timer3_timeout():
-	spawner.spawnEnemy(shooterEnemy, 3)
-	spawner.spawnEnemy(bombEnemy, 4)
-	spawner.spawnEnemy(shooterEnemy, 5)
+	spawner.spawnEnemy(shooterEnemy, 3, "copy")
+	spawner.spawnEnemy(bombEnemy, 4, "none")
+	spawner.spawnEnemy(shooterEnemy, 5, "none")
 	$Timer4.start()
 
 
 func _on_Timer4_timeout():
-	spawner.spawnEnemy(piercerEnemy, 4)
+	spawner.spawnEnemy(piercerEnemy, 4, "none")
 	$Timer5.start()
 
 
 func _on_Timer5_timeout():
-	spawner.spawnEnemy(piercerEnemy, 2)	
-	spawner.spawnEnemy(piercerEnemy, 6)
+	spawner.spawnEnemy(piercerEnemy, 2, "none")
+	spawner.spawnEnemy(piercerEnemy, 6, "life")
 	$Timer6.start()
 
 
 func _on_Timer6_timeout():
-	spawner.spawnEnemy(bombEnemy, 4)
+	spawner.spawnEnemy(bombEnemy, 4, "none")
 	$Timer7.start()

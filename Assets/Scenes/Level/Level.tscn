@@ -29,19 +29,19 @@ intro = ExtResource( 5 )
 loop = ExtResource( 6 )
 
 [node name="Charge Bar" type="ProgressBar" parent="."]
-margin_left = 513.064
-margin_top = 564.273
-margin_right = 785.064
-margin_bottom = 586.273
+margin_left = 510.0
+margin_top = 565.0
+margin_right = 782.0
+margin_bottom = 587.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Lives" type="Label" parent="."]
-margin_left = 28.7228
-margin_top = 569.311
-margin_right = 68.7228
-margin_bottom = 583.311
+margin_left = 30.0
+margin_top = 570.0
+margin_right = 70.0
+margin_bottom = 584.0
 text = "x 3"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -58,11 +58,22 @@ __meta__ = {
 }
 
 [node name="Copy Bar text" type="Label" parent="."]
-margin_left = 352.139
-margin_top = 569.0
-margin_right = 498.139
-margin_bottom = 583.0
+margin_left = 350.0
+margin_top = 570.0
+margin_right = 496.0
+margin_bottom = 584.0
 text = "Copy Ability Charging..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wave Number" type="Label" parent="."]
+margin_left = 150.0
+margin_top = 560.0
+margin_right = 201.0
+margin_bottom = 591.0
+text = "Wave: 1
+Loop: 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }

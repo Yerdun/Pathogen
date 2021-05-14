@@ -8,7 +8,7 @@ var loopCount
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"Loop amount".text = str(GlobalVariables.finalLoopCount)	# Print the amount of loops the player has gone through
+	$"Score".text = "Loops cleared: " + str(GlobalVariables.finalLoopCount)	+ "\nWaves in loop survived: " + str(GlobalVariables.final)# Print the amount of loops the player has gone through
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_Button_pressed():
+	$"Menu Click".play()
 	$Sprite.queue_free()
 	$ColorRect.queue_free()
 	$Button.queue_free()

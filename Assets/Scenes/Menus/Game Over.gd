@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_Button_pressed():
+	$"Menu Click".play()
 	$Sprite.queue_free()
 	$ColorRect.queue_free()
 	$Button.queue_free()

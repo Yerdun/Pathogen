@@ -8,7 +8,6 @@ export(String, "none", "life", "copy") var itemToDrop	# Variable that stores wha
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	currentHP = maxHP # give the enemy full HP
-	itemToDrop = "none"	# By default, enemies drop no items
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,10 +16,8 @@ func _process(delta):
 
 func _tryDying(): # called every frame to see if the enemy is dead
 	if currentHP <= 0: #when the enemy's HP is at or below zero:
-		if itemToDrop == "life":
-			owner.owner.add_child($"res://Assets/Scenes/Items/LifeExtend.tscn")
-		elif itemToDrop == "copy":
-			owner.owner.add_child($"res://Assets/Scenes/Items/CopyExtend.tscn")
+		if itemToDrop != "none":
+			drop()	# drop an item
 		queue_free() # destroy the enemy
 
 func takeDamage(var amount): # this function can be called by a bullet to inflict damage
@@ -31,3 +28,14 @@ func takeDamage(var amount): # this function can be called by a bullet to inflic
 
 func GetCopyAbility():
 	return copyAbility	# When hit by a copy bullet, the enemy will return its ability name
+
+
+func drop():
+	var dropToLoad	# Variable used to store the packed scene that the enemy will drop
+	if itemToDrop == "life":
+		dropToLoad = preload("res://Assets/Scenes/Items/LifeExtend.tscn")
+	elif itemToDrop == "copy":
+		dropToLoad = preload("res://Assets/Scenes/Items/CopyBulletExtend.tscn")
+	var drop = dropToLoad.instance()	# Variable stores an instance of the loaded scene
+	drop.position = position	# Set the drop's position to the enemy's position
+	get_parent().add_child(drop)	# Add the item to the scene tree
