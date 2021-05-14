@@ -53,9 +53,9 @@ func _on_Spawn_Timer_timeout(): # every time the timer runs out, try to spawn a 
 			3:
 				nextWaveScene = wave3
 			4:
-				nextWaveScene = wave1
+				nextWaveScene = wave4
 			5:
-				nextWaveScene = wave2
+				nextWaveScene = wave5
 			_:
 				print("Something went wrong.")
 				nextWaveScene = wave0

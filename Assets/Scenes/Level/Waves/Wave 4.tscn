@@ -33,6 +33,9 @@ one_shot = true
 wait_time = 4.0
 one_shot = true
 
+[node name="Timer7" type="Timer" parent="." index="6"]
+wait_time = 4.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
