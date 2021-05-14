@@ -121,7 +121,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.025, 1.025 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TextureRect:rect_position")
@@ -133,7 +133,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -110.875, -47.9458 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -14, -6 ), Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("TextureRect2:rect_position")
@@ -145,7 +145,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.6, 0.7, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -115.37, -61.4306 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -14, -8 ), Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("TextureRect2:rect_scale")
@@ -157,10 +157,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0.6, 0.7, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.025, 1.025 ), Vector2( 1, 1 ) ]
 }
 
-[node name="Control" type="Control"]
+[node name="Background" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -150.0
@@ -174,24 +174,21 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = -14.0
+margin_top = -8.0
+margin_right = 1010.0
+margin_bottom = 592.0
+rect_scale = Vector2( 1.025, 1.025 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -27.0
-margin_top = -12.0
-margin_right = 997.0
-margin_bottom = 588.0
-rect_scale = Vector2( 1.05, 1.05 )
+margin_right = 1024.0
+margin_bottom = 600.0
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

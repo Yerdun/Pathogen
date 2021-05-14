@@ -4,7 +4,7 @@ export (PackedScene) var BasicBullet # reference to basic bullet
 export (PackedScene) var PiercingBullet # reference to piercing bullet
 export (PackedScene) var CopyBullet # reference to the copy bullet
 
-export (int) var StartingMaxCharge = 10 # default value for MaxCharge
+export (int) var StartingMaxCharge = 15 # default value for MaxCharge
 var MaxCharge = StartingMaxCharge # number of enemies to be killed before copy bullet is ready
 var CurrentCharge # current progress to charge copy bullet
 

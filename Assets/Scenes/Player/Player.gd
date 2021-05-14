@@ -47,10 +47,12 @@ func _process(delta):
 func _on_Player_body_entered(body):
 	if body.is_in_group("life_extend"):
 		lives += 1	# Add one life if colliding with extend
+		$"Bullet Control/Copy Success".play()
 		body.queue_free()	# Remove body
 	
 	elif body.is_in_group("copy_extend"):
 		$"Bullet Control".CurrentCharge = $"Bullet Control".MaxCharge	# Max copy charge if colliding with copy charger
+		$"Bullet Control/Copy Ready".play()
 		body.queue_free()	# Remove body
 	
 	elif !is_dead:	# If colliding with anything else eg. enemy, bullet, die (don't allow dying while respawning)
@@ -60,8 +62,7 @@ func _on_Player_body_entered(body):
 		is_dead = true	# Set is_dead variable to true, to lock control
 		yield(get_tree().create_timer(0.5), "timeout")	# Wait half a second
 		if lives >= 1:	# When player still has lives
-			position.x = 160	# Reset player position (temporarily the Player node position defaults, change later)
-			position.y = 120
+			position = Vector2(80,300)	# Reset player position
 			$PlayerAnimation.play("default")	# Return to default animation
 			is_dead = false	# Change is_dead to false to regain control
 		else:	# Game over routine

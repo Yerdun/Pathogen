@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Pathogen"
-run/main_scene="res://Assets/Scenes/Test Scenes/Title.tscn"
+run/main_scene="res://Assets/Scenes/Menus/Title.tscn"
 config/icon="res://icon.png"
 
 [display]

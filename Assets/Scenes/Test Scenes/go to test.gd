@@ -18,4 +18,4 @@ func _ready() -> void:
 
 func _on_TestLevelButton_pressed() -> void:
 	$"Click Noise".play()
-	get_tree().change_scene("res://Assets/Scenes/Test Scenes/Test Level.tscn")
+	get_tree().change_scene("res://Assets/Scenes/Level/Level.tscn")

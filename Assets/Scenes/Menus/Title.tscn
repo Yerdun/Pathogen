@@ -22,14 +22,10 @@ animations = [ {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 400.763, 299.68 )
 frames = SubResource( 1 )
-<<<<<<< HEAD
 frame = 1
-=======
-frame = 2
->>>>>>> Miguel-branch
 playing = true
 
-[node name="Button" type="Button" parent="."]
+[node name="TestLevelButton" type="Button" parent="."]
 margin_left = 259.643
 margin_top = 317.086
 margin_right = 517.643
@@ -40,11 +36,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Click Noise" type="AudioStreamPlayer" parent="Button"]
+[node name="Click Noise" type="AudioStreamPlayer" parent="TestLevelButton"]
 stream = ExtResource( 8 )
 
 [node name="Music handler" parent="." instance=ExtResource( 5 )]
 intro = ExtResource( 6 )
 loop = ExtResource( 7 )
 
-[connection signal="pressed" from="Button" to="Button" method="_on_TestLevelButton_pressed"]
+[connection signal="pressed" from="TestLevelButton" to="TestLevelButton" method="_on_TestLevelButton_pressed"]

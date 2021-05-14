@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FocusHitbox.png-09c2869e3759c6765f0cf2c912253be4.stex"
+path="res://.import/victory.png-893d7c71e5b3af8ed26848948a153308.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Scenes/Player/FocusHitbox.png"
-dest_files=[ "res://.import/FocusHitbox.png-09c2869e3759c6765f0cf2c912253be4.stex" ]
+source_file="res://Assets/Sprites/backgrounds/victory.png"
+dest_files=[ "res://.import/victory.png-893d7c71e5b3af8ed26848948a153308.stex" ]
 
 [params]
 
