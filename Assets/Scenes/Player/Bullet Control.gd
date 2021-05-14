@@ -4,7 +4,8 @@ export (PackedScene) var BasicBullet # reference to basic bullet
 export (PackedScene) var PiercingBullet # reference to piercing bullet
 export (PackedScene) var CopyBullet # reference to the copy bullet
 
-export (int) var MaxCharge = 15 # number of enemies to be killed before copy bullet is ready
+export (int) var StartingMaxCharge = 10 # default value for MaxCharge
+var MaxCharge = StartingMaxCharge # number of enemies to be killed before copy bullet is ready
 var CurrentCharge # current progress to charge copy bullet
 
 var SelectedBullet # the currently active bullet
@@ -36,8 +37,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if owner.is_dead == false:	# If player is not dead
+	if !owner.is_dead:	# If player is not dead
 		_shoot() 	# Allow player to shoot
+	elif owner.is_dead:	# Reset all powerups and charge requirement on death
+		rapidFireEnabled = false
+		wideBeamEnabled = false
+		piercingEnabled = false
+		speedupEnabled = false
+		MaxCharge = StartingMaxCharge
+		
 
 func _shoot(): # handles shooting controls and cooldown
 	# if player is trying to use copy ability, cd is ready, and charge is max 
@@ -100,6 +108,11 @@ func _shoot(): # handles shooting controls and cooldown
 			WideBullet1_2.position = owner.position + $"Fire Point 1".position + wideSpacing * Vector2.DOWN
 			WideBullet2_1.position = owner.position + $"Fire Point 2".position + wideSpacing * Vector2.UP
 			WideBullet2_2.position = owner.position + $"Fire Point 2".position + wideSpacing * Vector2.DOWN
+			# Link to the copy charge bullet function if any of the wide bullets kill
+			WideBullet1_1.connect("killed_enemy", self, "chargeCopyBullet")
+			WideBullet1_2.connect("killed_enemy", self, "chargeCopyBullet")
+			WideBullet2_1.connect("killed_enemy", self, "chargeCopyBullet")
+			WideBullet2_2.connect("killed_enemy", self, "chargeCopyBullet")
 		# put shot on cooldown and start the cooldown timer
 		canFire = false
 		$"Shot Cooldown".start()
