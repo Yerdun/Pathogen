@@ -10,7 +10,7 @@ position = Vector2( 400, 292 )
 linear_velocity = Vector2( -400, 0 )
 applied_force = Vector2( 480, 0 )
 script = ExtResource( 3 )
-maxHP = 4
+maxHP = 5
 copyAbility = "piercing"
 
 [node name="Sprite" parent="." index="1"]
@@ -18,7 +18,7 @@ rotation = 1.5708
 texture = ExtResource( 2 )
 
 [node name="Charge Timer" type="Timer" parent="." index="2"]
-wait_time = 0.5
+wait_time = 0.16
 one_shot = true
 
 [node name="Charge Sound" type="AudioStreamPlayer" parent="." index="4"]

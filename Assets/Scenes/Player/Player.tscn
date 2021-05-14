@@ -47,7 +47,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 12, 12 )
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" groups=[
+"player",
+]]
 position = Vector2( 80, 300 )
 script = ExtResource( 2 )
 __meta__ = {

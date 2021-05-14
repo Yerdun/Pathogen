@@ -8,7 +8,6 @@
 [node name="Bomb Enemy" instance=ExtResource( 1 )]
 linear_velocity = Vector2( -60, 0 )
 script = ExtResource( 3 )
-maxHP = 4
 copyAbility = "widebeam"
 bullet = ExtResource( 2 )
 explosionSound = ExtResource( 4 )
@@ -17,7 +16,7 @@ explosionSound = ExtResource( 4 )
 rotation = -1.5708
 
 [node name="Explosion Timer" type="Timer" parent="." index="2"]
-wait_time = 5.0
+wait_time = 5.5
 one_shot = true
 autostart = true
 

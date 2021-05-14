@@ -2,13 +2,13 @@ extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 
 
 # Declare member variables here. Examples:
-export var charge_speed = 500
+export var charge_speed = 660
 var _waitingToCharge = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"Hitbox".shape.extents = Vector2(32,24)	# Hitbox better fits sprite
+	$"Hitbox".shape.extents = Vector2(32,22)	# Hitbox better fits sprite
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

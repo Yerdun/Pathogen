@@ -66,5 +66,4 @@ func _on_Player_body_entered(body):
 			$PlayerAnimation.play("default")	# Return to default animation
 			is_dead = false	# Change is_dead to false to regain control
 		else:	# Game over routine
-			get_tree().change_scene("res://Assets/Scenes/Test Scenes/Game Over.tscn")
-	
+			get_tree().change_scene("res://Assets/Scenes/Menus/Game Over.tscn")
