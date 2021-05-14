@@ -2,7 +2,7 @@ extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 
 
 # Declare member variables here. Examples:
-export var charge_speed = 660
+export var charge_speed = 600
 var _waitingToCharge = false
 
 

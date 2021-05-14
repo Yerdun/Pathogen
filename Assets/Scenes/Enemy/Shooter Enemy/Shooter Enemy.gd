@@ -37,10 +37,9 @@ func _shoot(numBullets):
 		$"Shooting Sound".play()	# Play the bullet shot sound
 		yield(get_tree().create_timer(0.16), "timeout")	# Wait 0.16 seconds between each shot
 	
-	yield(get_tree().create_timer(0.75), "timeout")	# Wait 3/4 of a second after firing
+	yield(get_tree().create_timer(1), "timeout")	# Wait 3/4 of a second after firing
 	var chargePosition = $"../Player".get_position()	# Need to get player position again, since this is out of the loop
-	mode = RigidBody2D.MODE_KINEMATIC
-	#linear_velocity = position.direction_to(chargePosition)
-	#linear_velocity.x = -660	# STUB: Intended to approach player at speed of -660, with a force 880 in the opposite direction to stop it 
-	applied_force = Vector2(880, 0)
+	linear_velocity = 660 * Vector2(cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# This should charge at a one-dimensional velocity of 660 towards the player. My vector mathematics might be off
+	applied_force = -880 * Vector2 (cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# Likewise, this should be a force of 880, in the opposite direction, of the angle between the enemy and the player
+	# Oddly, the two lines above sometimes causes it to freak out and oscillate up and down very rapidly. I don't know why.
 	isShooting = false	# Set isShooting to false, so it can shoot again

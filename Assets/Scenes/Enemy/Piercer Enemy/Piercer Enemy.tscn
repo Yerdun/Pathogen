@@ -18,7 +18,7 @@ rotation = 1.5708
 texture = ExtResource( 2 )
 
 [node name="Charge Timer" type="Timer" parent="." index="2"]
-wait_time = 0.16
+wait_time = 0.25
 one_shot = true
 
 [node name="Charge Sound" type="AudioStreamPlayer" parent="." index="4"]

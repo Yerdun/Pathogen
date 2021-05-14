@@ -12,6 +12,7 @@ linear_velocity = Vector2( -660, 0 )
 applied_force = Vector2( 1150, 0 )
 script = ExtResource( 3 )
 maxHP = 6
+copyAbility = "rapidfire"
 bullet = ExtResource( 5 )
 
 [node name="Sprite" parent="." index="1"]
