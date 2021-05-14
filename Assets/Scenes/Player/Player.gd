@@ -64,15 +64,13 @@ func _on_Player_body_entered(body):
 			position = Vector2(80,300)	# Reset player position
 			$PlayerAnimation.play("respawned")	# Show respawn animation (blinking player)
 			is_dead = false	# Change is_dead to false to regain control
-<<<<<<< HEAD
-=======
 			yield(get_tree().create_timer(3), "timeout")	# Give the player three seconds of mercy
 			can_die = true	# Allow the player to die again
 			$PlayerAnimation.play("default")	# Return to default animation
 		
 		elif $"../Wave Manager".loopCounter > 0:	# Victory routine
 			get_tree().change_scene("res://Assets/Scenes/Menus/Victory.tscn")
->>>>>>> jordan-branch
+
 			
 		else:	# Game over routine
 			get_tree().change_scene("res://Assets/Scenes/Menus/Game Over.tscn")

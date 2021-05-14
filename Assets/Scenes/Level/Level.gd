@@ -19,4 +19,4 @@ func _process(delta):
 	else:
 		$"Copy Bar text".text = "Copy Ability Charging..."
 	$"Lives".text = "x " + str($"Player".lives)
-	$"Score".text = "Wave: " + str(GlobalVariables.finalWave) + " / 6\nLoop: " + str(GlobalVariables.finalLoopCount + 1) + "\nKills: " + str(GlobalVariables.enemiesKilled)
+	$"Score".text = "Wave: " + str(GlobalVariables.finalWave) + " / 6\nLoop: " + str(GlobalVariables.finalLoopCount) + "\nKills: " + str(GlobalVariables.enemiesKilled)

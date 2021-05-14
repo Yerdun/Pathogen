@@ -41,7 +41,6 @@ margin_right = 198.0
 margin_bottom = 275.0
 text = "Loops cleared: 
 Lasted until Wave:
-Max abilities: 
 Enemies killed:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,5 +49,5 @@ __meta__ = {
 [node name="Menu Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
