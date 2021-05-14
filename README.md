@@ -1,3 +1,3 @@
-# Pathogen (name subject to change)
+# Pathogen
 
-Video game made for Cal Poly Pomona's Game Development and Design Club in Spring 2021. An arcade shooter in which the player can copy enemy bullet patterns. Developed in Godot version 3.3. 
+Video game made for CPPGD in May 2021. An arcade shooter in which the player can copy enemy bullet patterns. Developed in Godot version 3.3. 
