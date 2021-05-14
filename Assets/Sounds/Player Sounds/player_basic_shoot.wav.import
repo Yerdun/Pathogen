@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_basic_shoot.wav-b8b64b2684ad7a3f42d6ce92eb2669e0.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Player Sounds/player_basic_shoot.wav"
+dest_files=[ "res://.import/player_basic_shoot.wav-b8b64b2684ad7a3f42d6ce92eb2669e0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

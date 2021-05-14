@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Enemy Spawn Handler.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scenes/Test Scenes/Enemy Spawn Tester.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scenes/Enemy/Piercer Enemy/Piercer Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/Enemy/Bomb Enemy/Bomb Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/DefaultWave.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Wave Manager.tscn" type="PackedScene" id=6]
+
+[node name="Enemy Spawn Tester" type="Node"]
+script = ExtResource( 2 )
+bombEnemy = ExtResource( 4 )
+piercerEnemy = ExtResource( 3 )
+testWave1 = ExtResource( 5 )
+
+[node name="Enemy Spawn Handler" parent="." instance=ExtResource( 1 )]
+position = Vector2( 832, 0 )
+
+[node name="Selector" type="HSlider" parent="."]
+margin_left = 6.17355
+margin_top = 3.36739
+margin_right = 173.174
+margin_bottom = 31.3674
+min_value = 1.0
+max_value = 7.0
+value = 1.0
+tick_count = 7
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 191.543
+margin_top = 10.6908
+margin_right = 231.543
+margin_bottom = 24.6908
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spawn Piercer" type="Button" parent="."]
+margin_left = 238.125
+margin_top = 6.29961
+margin_right = 339.125
+margin_bottom = 26.2996
+text = "Spawn Piercer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spawn Bomb" type="Button" parent="."]
+margin_left = 360.967
+margin_top = 4.40971
+margin_right = 454.967
+margin_bottom = 24.4097
+text = "Spawn Bomb"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add Test Wave" type="Button" parent="."]
+margin_left = 477.51
+margin_top = 6.29961
+margin_right = 555.51
+margin_bottom = 26.2996
+text = "Test Wave"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wave Manager" parent="." instance=ExtResource( 6 )]
+
+[connection signal="value_changed" from="Selector" to="." method="_on_Selector_value_changed"]
+[connection signal="pressed" from="Spawn Piercer" to="." method="_on_Spawn_Piercer_pressed"]
+[connection signal="pressed" from="Spawn Bomb" to="." method="_on_Spawn_Bomb_pressed"]
+[connection signal="pressed" from="Add Test Wave" to="." method="_on_Add_Test_Wave_pressed"]

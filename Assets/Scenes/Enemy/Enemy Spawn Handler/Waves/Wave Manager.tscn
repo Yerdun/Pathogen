@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Wave Manager.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Inherited Test Scene 4.tscn" type="PackedScene" id=5]
+
+[node name="Wave Manager" type="Node"]
+script = ExtResource( 1 )
+wave0 = ExtResource( 2 )
+wave1 = ExtResource( 3 )
+wave2 = ExtResource( 4 )
+wave3 = ExtResource( 5 )
+
+[node name="Spawn Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Spawn Timer" to="." method="_on_Spawn_Timer_timeout"]
