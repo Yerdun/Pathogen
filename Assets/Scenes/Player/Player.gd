@@ -1,9 +1,12 @@
 extends Area2D
 
-export var standard_speed = 300	# Standard speed
-export var focus_speed = 140	# Speed while focused (slow mode)
-export var lives = 3			# Amount of player lives
-var is_dead = false				# Variable used to store death status (if dead, disallow doing anything)
+export var default_standard_speed = 300
+export var default_focus_speed = 140
+
+var standard_speed = default_standard_speed	# Standard speed
+var focus_speed = default_focus_speed	# Speed while focused (slow mode)
+export var lives = 3	# Amount of player lives
+var is_dead = false		# Variable used to store death status (if dead, disallow doing anything)
 
 
 func _ready():

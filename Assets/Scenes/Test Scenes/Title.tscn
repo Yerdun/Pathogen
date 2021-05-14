@@ -43,4 +43,4 @@ stream = ExtResource( 8 )
 intro = ExtResource( 6 )
 loop = ExtResource( 7 )
 
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_TestLevelButton_pressed"]

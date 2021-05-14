@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/44429__thecheeseman__hurt2.wav-d88c41a90cb4e4e6409ae497cb330e92.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Other Sounds/44429__thecheeseman__hurt2.wav"
+dest_files=[ "res://.import/44429__thecheeseman__hurt2.wav-d88c41a90cb4e4e6409ae497cb330e92.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
