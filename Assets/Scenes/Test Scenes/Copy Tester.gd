@@ -1,12 +1,13 @@
 extends Node
 
 func _ready():
-	# set Charge Bar's max value to player's max charge
-	$"Charge Bar".max_value = $"Player/Bullet Control".MaxCharge
+	pass
 
 func _process(_delta):
 	# set Charge Bar's current value to player's current charge
 	$"Charge Bar".value = $"Player/Bullet Control".CurrentCharge
+	# set Charge Bar's max value to player's max charge (necessary due to how it changes with each ability)
+	$"Charge Bar".max_value = $"Player/Bullet Control".MaxCharge
 
 
 

@@ -106,18 +106,21 @@ func _enableRapidFire(): # when called, enables rapid fire
 	if !rapidFireEnabled:
 		$"Shot Cooldown".wait_time = .25
 		$"Copy Success".play()
-	rapidFireEnabled = true
+		rapidFireEnabled = true
+		MaxCharge += 5	# Add 5 required kills to Max Charge to balance copy abilities
 
 func _enableWideBeam(): # when called, enables wide beam
 	if !wideBeamEnabled:
-		wideBeamEnabled = true
 		$"Copy Success".play()
+		wideBeamEnabled = true
+		MaxCharge += 5
 
 func _enablePiercing(): # when called, enables piercing
 	if !piercingEnabled:
 		SelectedBullet = PiercingBullet
 		$"Copy Success".play()
-	piercingEnabled = true
+		piercingEnabled = true
+		MaxCharge += 5
 
 func _on_Shot_Cooldown_timeout(): # connected to cooldown timer
 	canFire = true # when the cooldown finishes, prepare a new shot
