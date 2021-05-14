@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.3, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TextureRect:rect_position")
@@ -29,7 +29,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.3, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -110.875, -47.9458 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -27, -12 ), Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("TextureRect2:rect_position")
@@ -41,7 +41,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.5, 0.7, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -115.37, -61.4306 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -28, -15 ), Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("TextureRect2:rect_scale")
@@ -53,7 +53,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0.5, 0.7, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ), Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -121,7 +121,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TextureRect:rect_position")
@@ -133,7 +133,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -110.875, -47.9458 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -27, -12 ), Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("TextureRect2:rect_position")
@@ -145,7 +145,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.6, 0.7, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -115.37, -61.4306 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -28, -15 ), Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("TextureRect2:rect_scale")
@@ -157,7 +157,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0.6, 0.7, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ), Vector2( 1, 1 ) ]
 }
 
 [node name="Control" type="Control"]
@@ -176,8 +176,11 @@ margin_bottom = 40.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = -28.0
+margin_top = -15.0
+margin_right = 996.0
+margin_bottom = 585.0
+rect_scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
