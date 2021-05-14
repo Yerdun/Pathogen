@@ -20,19 +20,24 @@ texture = ExtResource( 2 )
 position = Vector2( 512.731, 40.4788 )
 
 [node name="Rapid Dummy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 515.112, 196.044 )
+position = Vector2( 640.112, 187.044 )
 maxHP = 999999
 copyAbility = "rapidfire"
 
 [node name="Wide Dummy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 517.494, 281.763 )
+position = Vector2( 639.494, 268.763 )
 maxHP = 999999
 copyAbility = "widebeam"
 
 [node name="Piercing Dummy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 517.494, 378.595 )
+position = Vector2( 639.494, 343.595 )
 maxHP = 999999
 copyAbility = "piercing"
+
+[node name="Speedup Dummy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 640.731, 427.479 )
+maxHP = 999999
+copyAbility = "speedup"
 
 [node name="Charge Bar" type="ProgressBar" parent="."]
 margin_left = 513.064
@@ -44,16 +49,16 @@ __meta__ = {
 }
 
 [node name="KillButton" type="Button" parent="."]
-margin_left = 605.263
-margin_top = 523.715
-margin_right = 696.263
-margin_bottom = 543.715
+margin_left = 528.263
+margin_top = 525.715
+margin_right = 619.263
+margin_bottom = 545.715
 text = "\"kill enemy\""
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
+[node name="TestLevelButton" type="Button" parent="."]
 margin_left = 58.6547
 margin_top = 558.345
 margin_right = 224.655
@@ -64,8 +69,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Click Noise" type="AudioStreamPlayer" parent="Button"]
+[node name="Click Noise" type="AudioStreamPlayer" parent="TestLevelButton"]
 stream = ExtResource( 4 )
 
 [connection signal="pressed" from="KillButton" to="." method="_on_KillButton_pressed"]
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="TestLevelButton" to="TestLevelButton" method="_on_TestLevelButton_pressed"]

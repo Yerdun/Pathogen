@@ -5,6 +5,7 @@ export var speed = 900 # the speed at which the bullet will travel
 signal copied_rapidfire
 signal copied_widebeam
 signal copied_piercing
+signal copied_speedup
 
 func _ready():
 	pass
@@ -22,6 +23,8 @@ func _on_Copy_Bullet_body_entered(body):
 				emit_signal("copied_widebeam")
 			"piercing":
 				emit_signal("copied_piercing")
+			"speedup":
+				emit_signal("copied_speedup")
 			_:
 				print("Default message!")
 				

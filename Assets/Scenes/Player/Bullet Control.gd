@@ -18,6 +18,9 @@ var wideSpacing = 16 # avoiding magic numbers; space between wide beam bullets
 
 var piercingEnabled # true if piercing is enabled
 
+export (int) var speedupStandard = 450
+export (int) var speedupFocus = 200
+var speedupEnabled	# true if speedup is enabled
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,6 +51,7 @@ func _shoot(): # handles shooting controls and cooldown
 		NewCopyBullet.connect("copied_rapidfire", self, "_enableRapidFire")
 		NewCopyBullet.connect("copied_widebeam", self, "_enableWideBeam")
 		NewCopyBullet.connect("copied_piercing", self, "_enablePiercing")
+		NewCopyBullet.connect("copied_speedup", self, "_enableSpeedup")
 		# put the bullet into the world
 		owner.owner.add_child(NewCopyBullet)
 		NewCopyBullet.position = owner.position + position
@@ -120,6 +124,13 @@ func _enablePiercing(): # when called, enables piercing
 		SelectedBullet = PiercingBullet
 		$"Copy Success".play()
 		piercingEnabled = true
+		MaxCharge += 5
+
+func _enableSpeedup():
+	if !speedupEnabled:
+		$"Copy Success".play()
+		owner.standard_speed = speedupStandard
+		owner.focus_speed = speedupFocus
 		MaxCharge += 5
 
 func _on_Shot_Cooldown_timeout(): # connected to cooldown timer
