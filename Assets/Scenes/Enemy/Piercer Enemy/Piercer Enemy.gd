@@ -28,3 +28,7 @@ func _on_Charge_Timer_timeout(): # when the charge timer runs out...
 	# chaaaaaarge!
 	$"Charge Sound".play()
 	linear_velocity.x = -1 * charge_speed # the -1 makes it go left
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()	# Unload the scene if it exits the game viewport. Specific to piercer enemies since they're the only ones that really leave the screen regularly, and I'd rather not risk a shooter or chaser disappear.

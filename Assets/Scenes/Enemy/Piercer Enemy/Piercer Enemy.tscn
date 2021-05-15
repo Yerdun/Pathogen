@@ -24,4 +24,7 @@ one_shot = true
 stream = ExtResource( 4 )
 volume_db = -2.0
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="6"]
+
 [connection signal="timeout" from="Charge Timer" to="." method="_on_Charge_Timer_timeout"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

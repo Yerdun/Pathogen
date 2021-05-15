@@ -24,3 +24,7 @@ func _on_Bullet_body_entered(body):
 
 func _killed_enemy(): # when called, emits the killed_enemy signal
 	emit_signal("killed_enemy")
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()	# Unload the scene if it exits the game viewport. This prevents the game from becoming unplayably slow after several waves
