@@ -9,7 +9,7 @@ func _ready():
 	GlobalVariables.enemiesKilled = 0
 
 func _process(delta):
-	if Input.is_action_pressed("ui_pause") and $"Pause Popup/Pause Timer".is_stopped():
+	if Input.is_action_pressed("ui_pause") and $"Pause Popup/Pause Cooldown".is_stopped():
 		get_tree().paused = true	# Pause game when pause button is pressed
 		$"Pause Popup".show()	# Show pause popup menu
 		$"Pause Popup/Pause Button".grab_focus()	# Focus so controller can unpause
@@ -30,4 +30,4 @@ func _process(delta):
 func _on_Pause_Button_pressed():
 	get_tree().paused = false	# Unpause game when the button in the pause popup is pressed
 	$"Pause Popup".hide()	# Hide pause popup
-	$"Pause Popup/Pause Timer".start(0.5)	# Start the pause timer so player can't spam pause
+	$"Pause Popup/Pause Cooldown".start(0.5)	# Start the pause timer so player can't spam pause

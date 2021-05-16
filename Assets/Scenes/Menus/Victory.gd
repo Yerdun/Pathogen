@@ -19,4 +19,5 @@ func _on_Button_pressed():
 	$ColorRect.queue_free()
 	$Button.queue_free()
 	$"Score".queue_free()
+	$Title/TestLevelButton.grab_focus()
 

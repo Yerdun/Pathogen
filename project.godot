@@ -16,7 +16,7 @@ _global_script_class_icons={
 
 config/name="Pathogen"
 run/main_scene="res://Assets/Scenes/Menus/Title.tscn"
-config/icon="res://icon.png"
+config/icon="res://gameicon.png"
 
 [autoload]
 
@@ -25,13 +25,9 @@ GlobalVariables="*res://GlobalVariables.gd"
 [display]
 
 window/size/width=800
+window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
-
-[global]
-
-resolution=false
-rendering=false
 
 [input]
 

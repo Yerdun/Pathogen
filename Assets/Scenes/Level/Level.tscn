@@ -117,7 +117,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pause Timer" type="Timer" parent="Pause Popup"]
+[node name="Pause Cooldown" type="Timer" parent="Pause Popup"]
 one_shot = true
 
 [connection signal="pressed" from="Pause Popup/Pause Button" to="." method="_on_Pause_Button_pressed"]

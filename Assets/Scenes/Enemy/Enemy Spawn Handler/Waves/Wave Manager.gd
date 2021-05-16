@@ -30,16 +30,16 @@ func _ready():
 		randomizedList.push_back(defaultList[x]) # adds the element at that index from defaultList to randomizedList
 		defaultList.remove(x) # and then removes that element for future iterations
 	print(randomizedList)
+	$"Spawn Timer".start(5)
 
 
 func _on_Spawn_Timer_timeout(): # every time the timer runs out, try to spawn a wave
 	# Spawn Timer autofires, when it runs out the first time the game starts for real
-	# if no more waves exist, then win!
+	# if no more waves exist, then loop
 	if randomizedList.size() == 0:
 		# Loop: Reroll and start another set of six waves
 		loopCounter += 1
 		print("Loop #", loopCounter)
-		$"Spawn Timer".wait_time = 1 # doesn't seem to do anything
 		_ready()
 
 	else: # but if waves exist:
