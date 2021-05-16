@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Sprites/backgrounds/title screen1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/backgrounds/title screen2.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Sounds/Menu Music/Pathogen menu intro.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sounds/Menu Music/Pathogen menu loop(fixed).ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/Other Sounds/menu_click.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Scenes/Menus/Fullscreen Handler.tscn" type="PackedScene" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -42,5 +43,7 @@ stream = ExtResource( 8 )
 [node name="Music handler" parent="." instance=ExtResource( 5 )]
 intro = ExtResource( 6 )
 loop = ExtResource( 7 )
+
+[node name="Fullscreen Handler" parent="." instance=ExtResource( 9 )]
 
 [connection signal="pressed" from="TestLevelButton" to="TestLevelButton" method="_on_TestLevelButton_pressed"]

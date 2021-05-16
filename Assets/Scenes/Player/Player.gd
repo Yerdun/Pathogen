@@ -42,13 +42,13 @@ func _process(delta):
 		position.x = clamp(position.x, 32, 768)	# Make sure player stays within screen boundaries
 		position.y = clamp(position.y, 32, 568)
 		
-	if Input.is_action_pressed("godmode"):	# Press C for godmode
-		if can_die:	# Activate godmode when C is pressed when you are able to die
-			can_die = false
-			$PlayerAnimation.play("respawned")
-		elif !can_die:	# If it's already enabled, disable it
-			can_die = true
-			$PlayerAnimation.play("default")
+#	if Input.is_action_pressed("godmode"):	# Press C for godmode
+#		if can_die:	# Activate godmode when C is pressed when you are able to die
+#			can_die = false
+#			$PlayerAnimation.play("respawned")
+#		elif !can_die:	# If it's already enabled, disable it
+#			can_die = true
+#			$PlayerAnimation.play("default")
 
 func _on_Player_body_entered(body):
 	if body.is_in_group("life_extend"):

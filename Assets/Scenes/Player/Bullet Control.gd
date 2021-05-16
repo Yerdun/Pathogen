@@ -28,7 +28,7 @@ export (int) var speedupStandard = 450
 export (int) var speedupFocus = 200
 var speedupEnabled	# true if speedup is enabled
 
-export (int) var lifeBonus = 50	# Reaching this amount of kills rewards you with a life
+export (int) var lifeBonus = 100	# Reaching this amount of kills rewards you with a life
 
 var secretCount
 
