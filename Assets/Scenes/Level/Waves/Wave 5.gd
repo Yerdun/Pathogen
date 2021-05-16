@@ -9,7 +9,7 @@ extends "res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Default Wave.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	._ready()
-	spawner.spawnEnemy(bombEnemy, 4, "life")
+	spawner.spawnEnemy(bombEnemy, 4, "none")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +36,7 @@ func _on_Timer3_timeout():
 
 
 func _on_Timer4_timeout():
-	spawner.spawnEnemy(piercerEnemy, 5, "none")
+	spawner.spawnEnemy(piercerEnemy, 5, "copy")
 	$Timer5.start()
 
 
@@ -46,7 +46,7 @@ func _on_Timer5_timeout():
 
 
 func _on_Timer6_timeout():
-	spawner.spawnEnemy(bombEnemy, 4, "none")
+	spawner.spawnEnemy(bombEnemy, 4, "life")
 	$Timer7.start()
 
 
@@ -61,5 +61,5 @@ func _on_Timer8_timeout():
 
 
 func _on_Timer9_timeout():
-	spawner.spawnEnemy(piercerEnemy, 6, "copy")
+	spawner.spawnEnemy(piercerEnemy, 6, "none")
 	queue_free()

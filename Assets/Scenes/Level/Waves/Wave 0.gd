@@ -9,7 +9,7 @@ extends "res://Assets/Scenes/Enemy/Enemy Spawn Handler/Waves/Default Wave.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	._ready()
-	spawner.spawnEnemy(piercerEnemy, 2, "none")
+	spawner.spawnEnemy(piercerEnemy, 2, "life")
 
 
 func _on_Goodbye_timeout():
@@ -19,7 +19,7 @@ func _on_Goodbye_timeout():
 	spawner.spawnEnemy(bombEnemy, 4, "none")
 	spawner.spawnEnemy(bombEnemy, 5, "none")
 	spawner.spawnEnemy(bombEnemy, 6, "none")
-	spawner.spawnEnemy(bombEnemy, 7, "life")
+	spawner.spawnEnemy(bombEnemy, 7, "none")
 	queue_free()	# Unload scene after timeout to prevent memory leaks. This is also a part of all other wave scenes.
 
 func getWaveLength():

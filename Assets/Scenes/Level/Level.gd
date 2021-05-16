@@ -1,5 +1,6 @@
 extends Node2D
 
+
 # This script is for UI elements and keeping track of score
 func _ready():
 	# Reset all scores to 0 on game start
@@ -8,6 +9,11 @@ func _ready():
 	GlobalVariables.enemiesKilled = 0
 
 func _process(delta):
+	if Input.is_action_pressed("ui_pause") and $"Pause Popup/Pause Timer".is_stopped():
+		get_tree().paused = true	# Pause game when pause button is pressed
+		$"Pause Popup".show()	# Show pause popup menu
+		$"Pause Popup/Pause Button".grab_focus()	# Focus so controller can unpause
+	
 	GlobalVariables.finalLoopCount = $"Wave Manager".loopCounter	# Set loop count to current loop
 	GlobalVariables.finalWave = 6 - $"Wave Manager".randomizedList.size()	# Set finalWave to the current wave
 	# Enemy kill count handled in Bullet Control
@@ -19,3 +25,9 @@ func _process(delta):
 	$Loop.text = "Loop " + str(GlobalVariables.finalLoopCount)
 	$Wave.text = "Wave " + str(GlobalVariables.finalWave) + " / 6"
 	$Kills.text = "Kills " + str(GlobalVariables.enemiesKilled)
+
+
+func _on_Pause_Button_pressed():
+	get_tree().paused = false	# Unpause game when the button in the pause popup is pressed
+	$"Pause Popup".hide()	# Hide pause popup
+	$"Pause Popup/Pause Timer".start(0.5)	# Start the pause timer so player can't spam pause

@@ -32,7 +32,7 @@ func _on_Timer2_timeout():
 
 
 func _on_Timer3_timeout():
-	spawner.spawnEnemy(bombEnemy, 4, "life")
+	spawner.spawnEnemy(bombEnemy, 4, "copy")
 	$Timer4.start()
 
 
@@ -48,6 +48,6 @@ func _on_Timer5_timeout():
 
 
 func _on_Timer6_timeout():
-	spawner.spawnEnemy(piercerEnemy, 2, "copy")
-	spawner.spawnEnemy(piercerEnemy, 6, "none")
+	spawner.spawnEnemy(piercerEnemy, 2, "none")
+	spawner.spawnEnemy(piercerEnemy, 6, "copy")
 	queue_free()
