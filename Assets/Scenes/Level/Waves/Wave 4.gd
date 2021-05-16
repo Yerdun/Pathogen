@@ -55,3 +55,7 @@ func _on_Timer5_timeout():
 func _on_Timer6_timeout():
 	spawner.spawnEnemy(bombEnemy, 4, "none")
 	$Timer7.start()
+
+
+func _on_Timer7_timeout():
+	queue_free()

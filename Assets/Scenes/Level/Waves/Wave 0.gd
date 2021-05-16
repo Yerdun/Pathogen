@@ -20,6 +20,7 @@ func _on_Goodbye_timeout():
 	spawner.spawnEnemy(bombEnemy, 5, "none")
 	spawner.spawnEnemy(bombEnemy, 6, "none")
 	spawner.spawnEnemy(bombEnemy, 7, "life")
+	queue_free()
 
 func getWaveLength():
 	return 8

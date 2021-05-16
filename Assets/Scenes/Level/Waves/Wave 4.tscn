@@ -42,3 +42,4 @@ wait_time = 4.0
 [connection signal="timeout" from="Timer4" to="." method="_on_Timer4_timeout"]
 [connection signal="timeout" from="Timer5" to="." method="_on_Timer5_timeout"]
 [connection signal="timeout" from="Timer6" to="." method="_on_Timer6_timeout"]
+[connection signal="timeout" from="Timer7" to="." method="_on_Timer7_timeout"]

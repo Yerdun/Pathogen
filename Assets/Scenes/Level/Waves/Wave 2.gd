@@ -50,3 +50,4 @@ func _on_Timer5_timeout():
 func _on_Timer6_timeout():
 	spawner.spawnEnemy(piercerEnemy, 2, "none")
 	spawner.spawnEnemy(piercerEnemy, 6, "none")
+	queue_free()

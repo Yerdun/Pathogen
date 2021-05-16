@@ -58,3 +58,4 @@ func _on_Timer7_timeout():
 func _on_Timer8_timeout():
 	spawner.spawnEnemy(bombEnemy, 3, "none")
 	spawner.spawnEnemy(bombEnemy, 5, "none")
+	queue_free()

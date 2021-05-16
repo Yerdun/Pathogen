@@ -39,7 +39,9 @@ func _on_Spawn_Timer_timeout(): # every time the timer runs out, try to spawn a 
 		# Loop: Reroll and start another set of six waves
 		loopCounter += 1
 		print("Loop #", loopCounter)
+		#$"Spawn Timer".wait_time = 3 # doesn't seem to do anything
 		_ready()
+
 	else: # but if waves exist:
 		var nextWaveNumber = randomizedList.pop_front()
 		var nextWaveScene

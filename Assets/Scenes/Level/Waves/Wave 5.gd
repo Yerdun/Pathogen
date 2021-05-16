@@ -62,3 +62,4 @@ func _on_Timer8_timeout():
 
 func _on_Timer9_timeout():
 	spawner.spawnEnemy(piercerEnemy, 6, "none")
+	queue_free()
