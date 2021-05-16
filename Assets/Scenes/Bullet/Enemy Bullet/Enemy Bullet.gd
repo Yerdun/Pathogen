@@ -15,3 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	position += direction * speed * delta
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()	# Unload the scene if it exits the game viewport. This prevents the game from becoming unplayably slow after several waves

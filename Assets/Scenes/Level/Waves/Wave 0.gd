@@ -20,7 +20,7 @@ func _on_Goodbye_timeout():
 	spawner.spawnEnemy(bombEnemy, 5, "none")
 	spawner.spawnEnemy(bombEnemy, 6, "none")
 	spawner.spawnEnemy(bombEnemy, 7, "life")
-	queue_free()
+	queue_free()	# Unload scene after timeout to prevent memory leaks. This is also a part of all other wave scenes.
 
 func getWaveLength():
 	return 8

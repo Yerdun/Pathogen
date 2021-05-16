@@ -18,11 +18,11 @@ func _tryDying(): # called every frame to see if the enemy is dead
 	if currentHP <= 0: #when the enemy's HP is at or below zero:
 		if itemToDrop != "none":
 			drop()	# drop an item
+		get_tree().call_group("bullet_control", "chargeCopyBullet")	# Call bullet control group to call the bullet charging function
 		queue_free() # destroy the enemy
 
 func takeDamage(var amount): # this function can be called by a bullet to inflict damage
 	# amount variable is the amount of damage taken
-
 	$"Enemy Impact".play()
 	currentHP = max(0, currentHP - amount) # this line caps hp loss at 0
 
