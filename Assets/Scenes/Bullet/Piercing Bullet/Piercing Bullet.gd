@@ -23,3 +23,7 @@ func _on_Piercing_Bullet_body_entered(body):
 			_killed_enemy() # neat! tell everyone, including the player
 	
 	# the bullet pierces, so it doesn't destroy itself
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()	# Remove after exiting screen

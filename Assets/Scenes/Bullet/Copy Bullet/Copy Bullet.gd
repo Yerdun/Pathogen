@@ -30,3 +30,7 @@ func _on_Copy_Bullet_body_entered(body):
 				
 	if body.is_in_group("enemies"):	# if hitting an enemy
 		queue_free() # destroy bullet on collision
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()	# Remove after exiting screen
