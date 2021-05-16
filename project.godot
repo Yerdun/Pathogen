@@ -16,7 +16,9 @@ _global_script_class_icons={
 
 config/name="Pathogen"
 run/main_scene="res://Assets/Scenes/Menus/Title.tscn"
-config/icon="res://gameicon.png"
+config/icon="res://Icons/gameicon.png"
+config/macos_native_icon="res://Icons/gameicon.icns"
+config/windows_native_icon="res://Icons/gameicon.ico"
 
 [autoload]
 
