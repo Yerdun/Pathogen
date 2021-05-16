@@ -40,7 +40,7 @@ func _shoot(numBullets):
 		$"Shooting Sound".play()	# Play the bullet shot sound
 		yield(get_tree().create_timer(0.16), "timeout")	# Wait 0.16 seconds between each shot
 	
-	yield(get_tree().create_timer(2), "timeout")	# Wait 2 seconds after firing
+	yield(get_tree().create_timer(2.2), "timeout")	# Wait 2.2 seconds after firing
 	var chargePosition = $"../Player".get_position()	# Need to get player position again, since this is out of the loop
 	linear_velocity = startingVelocity * Vector2(cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# Move towards the player at the starting velocity
 	applied_force = stoppingForce * Vector2 (cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# Enact a force, opposite of motion, in the angle between the enemy and the player
