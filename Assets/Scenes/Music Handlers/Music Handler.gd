@@ -14,9 +14,11 @@ func _ready():
 	$Loop.set_stream(loop)
 	$Intro.play() # and instantly play the intro
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+# Fullscreen handler is in music handler since it exists in every scene
+func _process(delta):
+		if Input.is_action_just_pressed("fullscreen"):
+			OS.set_window_fullscreen(!OS.window_fullscreen)	
+ 
 
 # when the intro finishes, the loop section instantly plays
 func _on_Intro_finished():
