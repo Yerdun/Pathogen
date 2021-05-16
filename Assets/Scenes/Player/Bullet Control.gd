@@ -5,7 +5,11 @@ export (PackedScene) var PiercingBullet # reference to piercing bullet
 export (PackedScene) var CopyBullet # reference to the copy bullet
 
 export (int) var StartingMaxCharge = 10 # default value for MaxCharge
-export (int) var chargeMargin = 5	# After getting a powerup, charge requirement becomes this much higher
+#export (int) var chargeMargin = 10	# After getting a powerup, charge requirement becomes this much higher
+export (int) var rapidChargeMargin = 20	# Each ability increases the charge requirement by a different amount
+export (int) var wideChargeMargin = 25
+export (int) var piercingChargeMargin = 5
+export (int) var speedupChargeMargin = 10
 var MaxCharge = StartingMaxCharge # number of enemies to be killed before copy bullet is ready
 var CurrentCharge # current progress to charge copy bullet
 
@@ -23,6 +27,8 @@ var piercingEnabled # true if piercing is enabled
 export (int) var speedupStandard = 450
 export (int) var speedupFocus = 200
 var speedupEnabled	# true if speedup is enabled
+
+export (int) var lifeBonus = 50	# Reaching this amount of kills rewards you with a life
 
 var secretCount
 
@@ -139,14 +145,14 @@ func _enableRapidFire(): # when called, enables rapid fire
 		$"Shot Cooldown".wait_time = .25
 		$"Copy Success".play()
 		rapidFireEnabled = true
-		MaxCharge += chargeMargin	# Add 5 required kills to Max Charge to balance copy abilities
+		MaxCharge += rapidChargeMargin	# Add required kills to Max Charge to balance copy abilities
 		secretCount += 1
 
 func _enableWideBeam(): # when called, enables wide beam
 	if !wideBeamEnabled:
 		$"Copy Success".play()
 		wideBeamEnabled = true
-		MaxCharge += chargeMargin
+		MaxCharge += wideChargeMargin
 		secretCount += 1 
 
 func _enablePiercing(): # when called, enables piercing
@@ -154,7 +160,7 @@ func _enablePiercing(): # when called, enables piercing
 		SelectedBullet = PiercingBullet
 		$"Copy Success".play()
 		piercingEnabled = true
-		MaxCharge += chargeMargin
+		MaxCharge += piercingChargeMargin
 		secretCount += 1
 
 func _enableSpeedup():
@@ -163,7 +169,7 @@ func _enableSpeedup():
 		owner.standard_speed = speedupStandard
 		owner.focus_speed = speedupFocus
 		speedupEnabled = true
-		MaxCharge += chargeMargin
+		MaxCharge += speedupChargeMargin
 		secretCount += 1
 
 func _on_Shot_Cooldown_timeout(): # connected to cooldown timer
@@ -179,6 +185,6 @@ func chargeCopyBullet(): # call this function when an enemy dies
 	CurrentCharge = min(MaxCharge, CurrentCharge + 1)
 	# Call this here since it checks when an enemy dies
 	GlobalVariables.enemiesKilled += 1	# Increment kill count by 1
-	if GlobalVariables.enemiesKilled % 100 == 0:
-		owner.lives += 1	# Grant a life for every 100 kills
+	if GlobalVariables.enemiesKilled % lifeBonus == 0:
+		owner.lives += 1	# Grant a life for every 50 kills
 		$"Copy Success".play()

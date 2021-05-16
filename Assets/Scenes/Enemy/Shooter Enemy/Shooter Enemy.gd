@@ -12,14 +12,14 @@ var isShooting	# Boolean used to store shooting status
 func _ready():
 	$"Hitbox".shape.extents = Vector2(32,24)	# Hitbox better fits sprite
 	isShooting = false	# Enemy starts off not shooting
-	linear_velocity.x = -startingVelocity	# Upon entering the scene, moves in from the left at starting velocity
+	linear_velocity.x = -startingVelocity	# Upon entering the scene, moves in from the right at starting velocity
 	applied_force.x = -stoppingForce	# This force slows it down to a halt
 
 func _physics_process(delta):
 	# Enemy starts out moving, opposite force slows it to a halt
-	if linear_velocity.dot(applied_force) > 0:	# Dot product is negative if two vectors are in opposite directions. but turns positive when they're in the same direction. So when the force is enough to turn the object in the other direction...
+	if linear_velocity.dot(applied_force) > 0:	# Dot product is negative if two vectors are in opposite directions, but turns positive when they're in the same direction. So when the force is enough to turn the enemy in the opposite direction...
 		applied_force = Vector2.ZERO	# Stop the enemy (no force, no velocity)
-		linear_velocity.x = 0
+		linear_velocity = Vector2.ZERO
 		if !isShooting:	# If the enemy is currently not shooting
 			_shoot(bulletsToShoot)	# Shoot at the player
 
@@ -42,6 +42,6 @@ func _shoot(numBullets):
 	
 	yield(get_tree().create_timer(2), "timeout")	# Wait 2 seconds after firing
 	var chargePosition = $"../Player".get_position()	# Need to get player position again, since this is out of the loop
-	linear_velocity = startingVelocity * Vector2(cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# When neutralised, this should move towards the player at the starting velocity. My vector mathematics might be off
-	applied_force = stoppingForce * Vector2 (cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# Likewise, this should be the starting force, in the opposite direction, of the angle between the enemy and the player
+	linear_velocity = startingVelocity * Vector2(cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# Move towards the player at the starting velocity
+	applied_force = stoppingForce * Vector2 (cos(chargePosition.angle_to_point(position)), sin(chargePosition.angle_to_point(position)))	# Enact a force, opposite of motion, in the angle between the enemy and the player
 	isShooting = false	# Set isShooting to false, so it can shoot again

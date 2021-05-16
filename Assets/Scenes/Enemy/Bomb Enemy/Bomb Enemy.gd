@@ -4,6 +4,7 @@ extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 # Declare member variables here. Examples:
 export (PackedScene) var bullet
 export (AudioStream) var explosionSound
+export var numberOfBullets = 12
 
 # Called when the node enters the scene tree for the first time.
 
@@ -35,4 +36,4 @@ func explode(var numberOfShots): # shoots a bunch of bullets in a circle
 
 
 func _on_Explosion_Timer_timeout():
-	explode(12)
+	explode(numberOfBullets)	# Explode with user specified number of bullets

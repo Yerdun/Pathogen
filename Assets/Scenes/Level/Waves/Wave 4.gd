@@ -23,7 +23,7 @@ func getWaveLength():
 
 func _on_Timer_timeout():
 	spawner.spawnEnemy(piercerEnemy, 6, "none")
-	spawner.spawnEnemy(piercerEnemy, 7, "none")
+	spawner.spawnEnemy(piercerEnemy, 7, "life")
 	$Timer2.start()
 
 
@@ -48,7 +48,7 @@ func _on_Timer4_timeout():
 
 func _on_Timer5_timeout():
 	spawner.spawnEnemy(piercerEnemy, 2, "none")
-	spawner.spawnEnemy(piercerEnemy, 6, "life")
+	spawner.spawnEnemy(piercerEnemy, 6, "none")
 	$Timer6.start()
 
 

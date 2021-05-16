@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Sprites/Enemy/bomb_enemy.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sounds/Enemy Sounds/enemy_takedamage.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Sounds/Player Sounds/player_die.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sounds/Enemy Sounds/enemy_die.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )

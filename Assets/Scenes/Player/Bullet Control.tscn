@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Sounds/Player Sounds/player_pierce_shoot.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sounds/Player Sounds/player_copy_attempt.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/Player Sounds/player_basic_shoot.wav" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Sounds/Player Sounds/player_die.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sounds/Enemy Sounds/enemy_die.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sounds/Player Sounds/player_copy_success.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Sounds/Other Sounds/44429__thecheeseman__hurt2.wav" type="AudioStream" id=11]
 

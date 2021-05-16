@@ -31,4 +31,4 @@ func _on_Charge_Timer_timeout(): # when the charge timer runs out...
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()	# Unload the scene if it exits the game viewport. Specific to piercer enemies since they're the only ones that really leave the screen regularly, and I'd rather not risk a shooter or chaser disappear.
+	queue_free()	# Unload the enemy if it exits the screen. Specific to piercers since they're the only ones that go offscreen regularly, and I'd rather not risk a shooter or chaser disappear.

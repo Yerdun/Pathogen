@@ -39,7 +39,7 @@ animations = [ {
 
 [node name="Chaser Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-maxHP = 4
+maxHP = 3
 copyAbility = "speedup"
 
 [node name="Sprite" parent="." index="1"]
@@ -47,3 +47,5 @@ visible = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="4"]
 frames = SubResource( 6 )
+frame = 2
+playing = true

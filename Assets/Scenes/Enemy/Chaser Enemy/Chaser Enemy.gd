@@ -3,11 +3,6 @@ extends "res://Assets/Scenes/Enemy/Basic Enemy/Enemy.gd"
 export var speed = 240	# How fast the enemy moves towards the player
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$"AnimatedSprite".play()
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $"../Player".is_dead:

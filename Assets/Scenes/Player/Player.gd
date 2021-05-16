@@ -1,10 +1,11 @@
 extends Area2D
 
-export var default_standard_speed = 300
-export var default_focus_speed = 140
+export var default_standard_speed = 300	# Standard speed
+export var default_focus_speed = 140	# Speed while focused (slow mode)
+export var copy_item_increase = 10	# Speed the copy item gives you
 
-var standard_speed = default_standard_speed	# Standard speed
-var focus_speed = default_focus_speed	# Speed while focused (slow mode)
+var standard_speed = default_standard_speed
+var focus_speed = default_focus_speed
 export var lives = 3	# Amount of player lives
 var is_dead = false		# Variable used to store death status (if dead, disallow doing anything)
 var can_die = true		# Similar to is_dead, but only controls mercy frames
@@ -56,8 +57,12 @@ func _on_Player_body_entered(body):
 		body.queue_free()	# Remove body
 	
 	elif body.is_in_group("copy_extend"):
-		$"Bullet Control".CurrentCharge = $"Bullet Control".MaxCharge	# Max copy charge if colliding with copy charger
-		$"Bullet Control/Copy Ready".play()
+		$"Bullet Control".CurrentCharge += copy_item_increase	# Add user defined amount to charge if colliding with copy charger
+		if $"Bullet Control".CurrentCharge >= $"Bullet Control".MaxCharge:
+			$"Bullet Control".CurrentCharge = $"Bullet Control".MaxCharge # Don't let current charge go over max
+			$"Bullet Control/Copy Ready".play()	# Play copy ready sound
+		else:
+			$"Bullet Control/Copy Fire".play()	# Play copy fire sound to signify a change. Should probably make sound for this
 		body.queue_free()	# Remove body
 	
 	elif !is_dead and can_die:	# If colliding with anything else eg. enemy, bullet, die (don't allow dying while respawning)
