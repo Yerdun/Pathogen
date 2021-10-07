@@ -50,6 +50,6 @@ stream = ExtResource( 9 )
 
 [node name="secret" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = 5.0
+volume_db = 7.0
 
 [connection signal="timeout" from="Shot Cooldown" to="." method="_on_Shot_Cooldown_timeout"]

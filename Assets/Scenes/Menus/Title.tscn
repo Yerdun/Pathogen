@@ -23,7 +23,7 @@ animations = [ {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 400.763, 299.68 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="TestLevelButton" type="Button" parent="."]

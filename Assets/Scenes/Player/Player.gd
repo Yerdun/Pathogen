@@ -41,14 +41,20 @@ func _process(delta):
 		position += velocity * delta	# Update position from previous frame
 		position.x = clamp(position.x, 32, 768)	# Make sure player stays within screen boundaries
 		position.y = clamp(position.y, 32, 568)
+	
+	if (GlobalVariables.debugEnabled):	# Only allow these when debug mode is enabled (can currently only do this through GlobalVariables.gd)
 		
-#	if Input.is_action_pressed("godmode"):	# Press C for godmode
-#		if can_die:	# Activate godmode when C is pressed when you are able to die
-#			can_die = false
-#			$PlayerAnimation.play("respawned")
-#		elif !can_die:	# If it's already enabled, disable it
-#			can_die = true
-#			$PlayerAnimation.play("default")
+		if Input.is_action_just_pressed("godmode"):	# Press C for godmode
+			if can_die:	# Activate godmode when C is pressed when you are able to die
+				can_die = false
+				$PlayerAnimation.play("respawned")
+			elif !can_die:	# If it's already enabled, disable it
+				can_die = true
+				$PlayerAnimation.play("default")
+				
+		if Input.is_action_just_pressed("max_charge"):	# Press V to instantly max out your charge
+			$"Bullet Control".CurrentCharge = $"Bullet Control".MaxCharge	# Set current charge to maximum
+			$"Bullet Control/Copy Ready".play()	# Play the copy ready sound
 
 func _on_Player_body_entered(body):
 	if body.is_in_group("life_extend"):
