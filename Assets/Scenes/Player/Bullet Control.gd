@@ -65,12 +65,12 @@ func _process(_delta):
 		
 
 func _shoot(): # handles shooting controls and cooldown
-	if Input.is_action_pressed("copy") and canFire and CurrentCharge == MaxCharge and secretCount == 4:
+	if Input.is_action_just_pressed("copy") and canFire and CurrentCharge == MaxCharge and secretCount == 4:
 		$"secret".play()
-		CurrentCharge = 0
+		#CurrentCharge = 0
 		
 	# if player is trying to use copy ability, cd is ready, and charge is max 
-	elif Input.is_action_pressed("copy") and canFire and CurrentCharge == MaxCharge:
+	elif Input.is_action_just_pressed("copy") and canFire and CurrentCharge == MaxCharge:
 		# play copy attempt sound
 		$"Copy Fire".play()
 		#instance a copy bullet
